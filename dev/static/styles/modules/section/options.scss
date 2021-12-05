@@ -1,0 +1,144 @@
+
+.options {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $black26;
+  }
+}
+
+.engine {
+  &__title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: $white;
+    &.engine__top--gray {
+      background-color: #F5F5F5;
+    }
+  }
+  &__body {
+    display: none;
+    padding: 24px 54px;
+    background-color: #F5F5F5;
+  }
+  &__col {
+    display: flex;
+    align-items: center;
+    &:nth-child(1) {
+      gap: 12px;
+      flex: 0 0 275px;
+    }
+    &:nth-child(2) {
+      gap: 40px;
+    }
+    &:nth-child(3) {
+      gap: 4px;
+    }
+  }
+  &__open {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: $blackTitle;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: $FUbuntu;
+    span {
+      max-width: 220px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &.active {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__price {
+    font-size: 18px;
+    line-height: 22px;
+    &.old {
+     color: $blackTitle;
+     span { text-decoration: line-through; }
+    }
+    &.new {
+      color: $red;
+      font-weight: bold;
+    }
+  }
+
+  &__check {
+    input {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      & + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        @include size(24px);
+        border: 2px solid $red;
+        border-radius: 2px;
+        transition: all .3s;
+        svg {
+          position: absolute;
+          left: 53%;
+          top: 50%;
+          transition: all .2s;
+          transform: translate(-50%, -50%) scale(0);
+        }
+      }
+      &:checked {
+        & + label {
+          background-color: $red;
+          svg { transform: translate(-50%, -50%) scale(1); }
+        }
+      }
+    }
+  }
+  &-info {
+    color: $blackTitle;
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+    &__title {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 24px;
+    }
+    &__inner {
+      display: flex;
+      gap: 45px;
+    }
+    &__col {
+      width: 33.333%;
+      ul {
+        font-size: 15px;
+        line-height: 21px;
+      }
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+}

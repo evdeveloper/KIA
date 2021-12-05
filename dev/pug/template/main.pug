@@ -3,28 +3,158 @@ block variables
 
 doctype html
 html(lang="ru-RU")
-	head
-		meta(charset="utf-8")
-		title #{title}
-		<!--[if IE]>
-		meta(http-equiv='X-UA-Compatible', content="IE = edge")
-		<![endif]-->
-		meta(name="viewport" content="width=device-width,initial-scale=1")
-		meta(name="keywords" content="")
-		meta(name="description" content="")
-		meta(name="color-theme" content="")
-		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    <!--[if IE]>
+    meta(http-equiv='X-UA-Compatible', content="IE = edge")
+    <![endif]-->
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    meta(name="color-theme" content="")
+    link(rel="apple-touch-icon" sizes="60x60" href="static/favicon/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png")
+    link(rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#da532c")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
 
-		<!--[if lt IE 9]>
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
-		<![endif]-->
-	body(class=pageClass)
-		.wrapper
-			include ../modules/header/header
-			main.content
-				block content
-			include ../modules/footer/footer
-		script(src="static/js/jquery-3.3.1.min.js")
-		script(src="static/js/libs.min.js")
-		script(src="static/js/main.js")
-		block script
+    <!--[if lt IE 9]>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+    <![endif]-->
+  body(class=pageClass)
+    .wrapper
+      include ../modules/header/header
+      main.content
+        block content
+      include ../modules/footer/footer
+
+
+    .popup.popup__error(data-popup-id="#popupError")
+      .popup__close(data-popup-close)
+        svg(width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="white")
+
+      .popup__title ошибка....
+      p Ой видимо что-то пошло не так :( 
+      p 
+        | Перезвоните по номеру 
+        a(href="tel:+78122204847") +7 (812) 220-48-47, 
+      p либо попробуйте отправить заявку еще раз
+    .popup.popup__success(data-popup-id="#popupSuccess")
+      .popup__close(data-popup-close)
+        svg(width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="#333333")
+
+
+      .popup__title Успешно!
+      p Наши менеджеры уже совсем скоро вам презвонят!
+    .popup.popup__request(data-popup-id="#popupRequest")
+      .popup__close(data-popup-close)
+        svg(width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="#333333")
+      .popup__title Отправить заявку
+      ul.autoOptions 
+        li.autoOptions__item(data-auto="model")
+          | Автомобиль: 
+          b KIA RIO
+      form(action="/" class="popupForm")
+        .popupForm__list
+          input(type="text" name="name" aria-label="name" placeholder="Ваше имя")
+          input(type="tel" name="phone" aria-label="phone" placeholder="Телефон")
+        button(type="button" class="Button Button--request Button--big")
+          svg(width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M23.3225 1.40907C22.7222 0.793011 21.8338 0.563498 21.0055 0.805091L1.6896 6.42212C0.815638 6.66492 0.196185 7.36192 0.0293162 8.24736C-0.141154 9.1485 0.45429 10.2924 1.23221 10.7708L7.27188 14.4829C7.89134 14.8634 8.69086 14.7679 9.20347 14.2509L16.1195 7.29186C16.4676 6.92947 17.0439 6.92947 17.392 7.29186C17.7402 7.64217 17.7402 8.20991 17.392 8.5723L10.464 15.5326C9.95018 16.0484 9.85414 16.8517 10.2323 17.475L13.9226 23.5752C14.3548 24.3 15.0991 24.7107 15.9154 24.7107C16.0115 24.7107 16.1195 24.7107 16.2155 24.6986C17.1519 24.5778 17.8962 23.9376 18.1723 23.0316L23.8987 3.74044C24.1508 2.91903 23.9227 2.02513 23.3225 1.40907Z" fill="white")
+          | Отправить заявку
+        .popupForm__agree.agree 
+          | Нажимая на кнопку "Отправить заявку" вы даете согласие на обработку 
+          a(href="#") 
+            span персональных данных
+    .popup.popup__offer(data-popup-id="#popupOffer")
+      .popup__close(data-popup-close)
+        svg(width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="#333333")
+      .popup__title Спецпредложение
+      ul.autoOptions 
+        li.autoOptions__item(data-auto="model")
+          | Автомобиль: 
+          b KIA RIO
+        li.autoOptions__item(data-auto="equipment")
+          | Комплектация: 
+          b COMFORT
+      form(action="/" class="popupForm")
+        .popupForm__list
+          input(type="text" name="name" aria-label="name" placeholder="Ваше имя")
+          input(type="tel" name="phone" aria-label="phone" placeholder="Телефон")
+        button(type="button" class="Button Button--request Button--big")
+          svg(width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M23.3225 1.40907C22.7222 0.793011 21.8338 0.563498 21.0055 0.805091L1.6896 6.42212C0.815638 6.66492 0.196185 7.36192 0.0293162 8.24736C-0.141154 9.1485 0.45429 10.2924 1.23221 10.7708L7.27188 14.4829C7.89134 14.8634 8.69086 14.7679 9.20347 14.2509L16.1195 7.29186C16.4676 6.92947 17.0439 6.92947 17.392 7.29186C17.7402 7.64217 17.7402 8.20991 17.392 8.5723L10.464 15.5326C9.95018 16.0484 9.85414 16.8517 10.2323 17.475L13.9226 23.5752C14.3548 24.3 15.0991 24.7107 15.9154 24.7107C16.0115 24.7107 16.1195 24.7107 16.2155 24.6986C17.1519 24.5778 17.8962 23.9376 18.1723 23.0316L23.8987 3.74044C24.1508 2.91903 23.9227 2.02513 23.3225 1.40907Z" fill="white")
+          | Отправить заявку
+        .popupForm__agree.agree 
+          | Нажимая на кнопку "Отправить заявку" вы даете согласие на обработку 
+          a(href="#") 
+            span персональных данных
+    .popup.popup__reserve(data-popup-id="#popupReserve")
+      .popup__close(data-popup-close)
+        svg(width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="#333333")
+      .popup__title Зарезервировать
+      ul.autoOptions 
+        li.autoOptions__item(data-auto="model")
+          | Автомобиль: 
+          b KIA RIO
+        li.autoOptions__item(data-auto="equipment")
+          | Комплектация: 
+          b COMFORT
+      form(action="/" class="popupForm")
+        .popupForm__list
+          input(type="text" name="name" aria-label="name" placeholder="Ваше имя")
+          input(type="tel" name="phone" aria-label="phone" placeholder="Телефон")
+        button(type="button" class="Button Button--request Button--big")
+          svg(width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M23.3225 1.40907C22.7222 0.793011 21.8338 0.563498 21.0055 0.805091L1.6896 6.42212C0.815638 6.66492 0.196185 7.36192 0.0293162 8.24736C-0.141154 9.1485 0.45429 10.2924 1.23221 10.7708L7.27188 14.4829C7.89134 14.8634 8.69086 14.7679 9.20347 14.2509L16.1195 7.29186C16.4676 6.92947 17.0439 6.92947 17.392 7.29186C17.7402 7.64217 17.7402 8.20991 17.392 8.5723L10.464 15.5326C9.95018 16.0484 9.85414 16.8517 10.2323 17.475L13.9226 23.5752C14.3548 24.3 15.0991 24.7107 15.9154 24.7107C16.0115 24.7107 16.1195 24.7107 16.2155 24.6986C17.1519 24.5778 17.8962 23.9376 18.1723 23.0316L23.8987 3.74044C24.1508 2.91903 23.9227 2.02513 23.3225 1.40907Z" fill="white")
+          | Отправить заявку
+        .popupForm__agree.agree 
+          | Нажимая на кнопку "Отправить заявку" вы даете согласие на обработку 
+          a(href="#") 
+            span персональных данных
+    .popup.popup__credit(data-popup-id="#popupCredit")
+      .popup__close(data-popup-close)
+        svg(width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="#333333")
+      .popup__title Заявка на кредит
+      ul.autoOptions 
+        li.autoOptions__item(data-auto="model")
+          | Автомобиль: 
+          b KIA RIO
+        li.autoOptions__item(data-auto="equipment")
+          | Комплектация: 
+          b COMFORT
+      form(action="/" class="popupForm")
+        .popupForm__list
+          input(type="text" name="name" aria-label="name" placeholder="Ваше имя")
+          input(type="tel" name="phone" aria-label="phone" placeholder="Телефон")
+        button(type="button" class="Button Button--request Button--big")
+          svg(width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M23.3225 1.40907C22.7222 0.793011 21.8338 0.563498 21.0055 0.805091L1.6896 6.42212C0.815638 6.66492 0.196185 7.36192 0.0293162 8.24736C-0.141154 9.1485 0.45429 10.2924 1.23221 10.7708L7.27188 14.4829C7.89134 14.8634 8.69086 14.7679 9.20347 14.2509L16.1195 7.29186C16.4676 6.92947 17.0439 6.92947 17.392 7.29186C17.7402 7.64217 17.7402 8.20991 17.392 8.5723L10.464 15.5326C9.95018 16.0484 9.85414 16.8517 10.2323 17.475L13.9226 23.5752C14.3548 24.3 15.0991 24.7107 15.9154 24.7107C16.0115 24.7107 16.1195 24.7107 16.2155 24.6986C17.1519 24.5778 17.8962 23.9376 18.1723 23.0316L23.8987 3.74044C24.1508 2.91903 23.9227 2.02513 23.3225 1.40907Z" fill="white")
+          | Отправить заявку
+        .popupForm__agree.agree 
+          | Нажимая на кнопку "Отправить заявку" вы даете согласие на обработку 
+          a(href="#") 
+            span персональных данных
+          
+
+
+    .overlay
+
+    script(src="static/js/jquery-3.3.1.min.js")
+    script(src="static/js/libs.min.js")
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    block script
+    script(src="static/js/popup.js")
+    script(src="static/js/main.js")
+    

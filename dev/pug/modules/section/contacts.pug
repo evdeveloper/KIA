@@ -1,0 +1,25 @@
+section.s-contacts
+  .contacts__inner
+    .contacts__col
+      .contacts__info
+        .contacts__wrap
+          .contacts__logo 
+            img(src="static/images/img/logo-kia.svg" alt="kia")
+            img(src="static/images/img/logo.png" alt="Пулково")
+          .contacts__loc.location
+            | г. Санкт-Петербург, Московское шоссе 13А
+            br
+            a(href="#" data-scroll="#map") 
+              span посмотреть схему проезда
+        .contacts__list
+          .contacts__phone.phone
+            a(href="tel:+78122204847") +7 (812) 220-48-47
+            br
+            span ежедневно с 09:00 до 21:00
+          button(type="button" class="Button" data-popup-target="#popupRequest")
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.60982 10.3937C12.9341 13.717 13.6882 9.87226 15.8047 11.9873C17.8453 14.0273 19.0181 14.436 16.4327 17.0206C16.1089 17.2808 14.0514 20.4119 6.82054 13.1831C-0.411191 5.95333 2.71803 3.8937 2.97835 3.56996C5.56993 0.978204 5.97159 2.15782 8.01212 4.19777C10.1287 6.31375 6.28559 7.07034 9.60982 10.3937Z" fill="white"/>
+            </svg>
+            | Обратный звонок
+    .contacts__col
+      #map(style="width: 100%; height: 400px;")

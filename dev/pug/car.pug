@@ -1,0 +1,35 @@
+extends template/main
+
+block variables
+  - var title = 'KIA RIO'
+  - var pageClass = 'car-page'
+
+
+
+block content
+  .breadcrumbs
+    .container
+      .breadcrumbs__list
+        a(href="#") Главная
+        a(href="#") Новые автомобили
+        a(href="#") автомобили Киа
+        span Купить Киа Рио
+        
+  include modules/section/offers
+  include modules/section/autocredit
+  include modules/section/gift
+  include modules/section/programs
+  include modules/section/gallery
+  include modules/section/options
+  include modules/section/feature
+  include modules/section/cars-save-money
+  include modules/section/saving-time
+  include modules/section/contacts
+
+block script 
+  script(src="static/js/fancybox.min.js")
+
+
+
+
+

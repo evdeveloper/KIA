@@ -1,2 +1,65 @@
 footer { flex: 0 0 auto; }
 
+.footer {
+  &__top {
+    padding: 35px 0;
+    background-color: $blackText;
+  }
+  &__bottom {
+    padding: 20px 0;
+    font-size: 12px;
+    line-height: 18px;
+    background-color: $whiteTwo;
+    p {
+      color: $gray;
+      margin-bottom: 8px;
+    }
+  }
+  &-nav {
+    &__item {
+      font-size: 14px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      a {
+        display: inline-block;
+        color: $white;
+        font-weight: 500;
+        margin: 4px 24px 4px 0;
+        transition: color .3s;
+        &:hover { color: $red; }
+      }
+    }
+    &__title {
+      color: $red;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    &__link {
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 160%;
+      transition: color .3s;
+      color: $white;
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      &:hover,
+      &:active {
+        color: $red;
+      }
+    }
+    &:first-child {
+      @include media(414) {
+        display: none;
+      }
+    }
+    &:last-child {
+      display: none;
+      @include media(414) {
+        display: block;
+      }
+    }
+  }
+}

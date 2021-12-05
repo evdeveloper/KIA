@@ -1,0 +1,99 @@
+.header {
+  @include media(768) {
+    height: 86px;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > .Button {
+      @include media(650) {
+        display: none;
+      }
+    }
+  }
+  &__top {
+    padding: 18px 0;
+    @include media(768) {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background-color: $white;
+      box-shadow: 0 0 15px -10px #020202;
+    }
+  }
+  &__body {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background-color: $blackText;
+    padding: 13px 0;
+    @include media(768) {
+      display: none;
+    }
+    &.fixed {
+      position: fixed;
+    }
+  }
+  &__location {
+    @include media(1000) {
+      display: none;
+    }
+  }
+}
+
+.location {
+  font-size: 18px;
+  a {
+    font-size: 12px;
+    span {
+      color: $red;
+      border-bottom: 1px solid;
+      transition: color .3s;
+    }
+    &:hover {
+      span { color: $redHover; }
+    }
+    &:active {
+      span { color: $activeLink; }
+    }
+  }
+}
+
+.phone {
+  font-size: 18px;
+  text-align: center;
+  a { color: $blackText; }
+  span {
+    color: $red;
+    font-size: 12px;
+    @include media(768) {
+      font-size: 10px;
+    }
+  }
+  @include media(768) {
+    font-size: 16px;
+  }
+  @include media(414) {
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
+
+.menu-nav {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all .3s;
+    &:hover {
+      color: $red;
+    }
+    @include media(1000) {
+      font-size: 12px;
+    }
+  }
+}

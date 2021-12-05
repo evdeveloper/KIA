@@ -1,0 +1,70 @@
+.feature {
+  &__table {
+    width: 100%;
+    thead {
+      tr {
+        background-color: #F5F5F5;
+        &:nth-child(2) {
+          th {
+            background-color: $white;
+            padding: 6px;
+          }
+        }
+      }
+      th {
+        padding: 10px 0;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: $red;
+        &:first-child { 
+          padding-left: 24px;
+          color: $black26;
+          text-align: left;
+        }
+        &:last-child { padding-right: 24px; }
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: #F5F5F5;
+        }
+      }
+      td {
+        padding: 28px 24px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: $blackTitle;
+        &:first-child {
+          font-size: 14px;
+          text-align: left;
+          font-weight: normal;
+        }
+      }
+
+      [data-tr='engine'],
+      [data-tr='size'],
+      [data-tr='dynamic'],
+      [data-tr='drop'],
+      [data-tr='fuel'] {
+        display: none;
+      }
+    }
+  }
+  &-tbody {
+    &__top {
+      display: flex;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      color: $blackTitle;
+      &.active {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

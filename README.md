@@ -1,6 +1,6 @@
-# Start-Template-Gulp
+# Kia
 
 Для старта шаблона нужно выполнить:
-1. git clone git@github.com:evdeveloper/Start-Template-Gulp.git   
+1. git clone   
 2. npm i 
 3. gulp

@@ -1,0 +1,62 @@
+.mobile-menu {
+  display: none;
+  position: fixed;
+  min-width: 375px;
+  z-index: 999;
+  right: -200%;
+  transition: right .4s ease;
+  top: 0;
+  padding: 28px 20px 30px;
+  background: $white;
+  box-shadow: 0 0 30px -20px $black;
+  &.active {
+    right: 0;
+  }
+  @include media(768) {
+    display: block;
+  }
+  @include media(375) {
+    width: 100%;
+    min-width: 100%;
+  }
+  address {
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 130%;
+  }
+  &__logo {
+    padding-bottom: 14px;
+    border-bottom: 1px solid $grayFour;
+    img {
+      max-width: 60px;
+    }
+  }
+  &__call {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a {
+      font-weight: bold;
+      font-size: 15px;
+      white-space: nowrap;
+      line-height: 130%;
+      color: $black;
+    }
+    @include media(414) {
+      flex-direction: column;
+    }
+  }
+  &__links {
+    margin-bottom: 36px;
+    a {
+      display: block;
+      font-weight: 500;
+      color: $black;
+      font-size: 13px;
+      padding: 10px 0;
+      border-bottom: 1px solid $grayFour;
+    }
+  }
+}

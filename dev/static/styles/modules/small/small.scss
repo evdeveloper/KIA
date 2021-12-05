@@ -1,0 +1,112 @@
+.blockForm {
+  &__inner {
+    display: flex;
+    margin-bottom: 12px;
+    gap: 16px;
+    @include media(1100) {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .Button {
+      @include media(414) {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+  }
+  &__info {
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    color: $gray;
+    a {
+      span {
+        color: $red;
+        border-bottom: 1px solid;
+      }
+      &:hover {
+        span { color: $redHover; }
+      }
+      &:active {
+        span { color: $activeLink; }
+      }
+    }
+  }
+  &__input {
+    flex: 1;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid $white;
+    border-radius: 4px;
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 23.5px 16px 23.5px 24px;
+      font-size: 18px;
+      transition: all .3s;
+      &::placeholder {
+        color: $gray;
+        transition: all .3s;
+      }
+      &:focus {
+        background: rgba(255, 255, 255, 0.5);
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+    @include media(1100) {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+.agree {
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+  color: $gray;
+  span {
+    color: $red;
+    border-bottom: 1px solid;
+  }
+  &:hover {
+    span { color: $redHover; }
+  }
+  &:active {
+    span { color: $activeLink; }
+  }
+}
+
+.title-black {
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 37px;
+  color: $black26;
+  margin-bottom: 24px;
+}
+
+.breadcrumbs {
+  margin: 12px 0;
+  &__list {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    a {
+      display: flex;
+      align-items: center;
+      color: $blackTitle;
+      transition: all .3s;
+      &:after {
+        content: '|';
+        padding: 0 5px;
+        color: $blackTitle;
+      }
+      &:hover,
+      &:active {
+        color: $red;
+      }
+    }
+    span { color: $grayFive; }
+  }
+}

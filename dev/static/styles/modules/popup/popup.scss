@@ -1,0 +1,216 @@
+.popup {
+  $this: &;
+  display: none;
+  position: fixed;
+  width: calc(100% - 30px);
+  max-width: 900px;
+  padding: 120px 30px 95px;
+  top: 100px;
+  left: 50%;
+  background-color: $white;
+  transform: translateX(-50%) scale(0.85);
+  transition: all .3s;
+  z-index: 9999999;
+  @include media(768) {
+    top: 30px;
+  }
+  @include media(414) {
+    padding: 120px 20px 40px;
+  }
+  @include media(320) {
+    padding: 80px 20px 20px;
+  }
+  p { 
+    color: $black26;
+    text-align: center;
+    @include media(414) {
+      line-height: 26px;
+    }
+  }
+
+  &#{$this}__error {
+    background-color: $red;
+    color: $white;
+    p {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 29px;
+      color: $white;
+      text-align: center;
+      a {
+        color: $white;
+        @include media(414) {
+          display: block;
+        }
+      }
+    }
+    #{$this}__title {
+      color: $white;
+    }
+  }
+  &._show {
+    display: block;
+    animation-name: bounceIn;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+  }
+  &__close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    svg {
+      @include media(414) {
+        max-width: 25px;
+      }
+    }
+  }
+  &__title {
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 65px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: $red;
+    @include media(768) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+    @include media(414) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    @include media(350) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
+
+.form-group {
+  &__item {
+    margin-bottom: 24px;
+    input {
+      height: 55px;
+      margin-bottom: 0;
+      @include media(600) {
+          height: 50px;
+      }
+      &::placeholder {
+        @include media(414) {
+            font-size: 14px;
+        }
+      }
+    }
+  }
+  button {
+    display: flex;
+    max-width: 300px;
+    margin: 30px auto 0;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  background: rgba(65,65,65, 0.7);
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: opacity .6s;
+  right: 0;
+  bottom: 0;
+}
+
+.autoOptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  gap: 24px;
+  margin-bottom: 35px;
+  @include media(600) {
+    gap: 6px;
+  }
+}
+
+.popupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .Button {
+    @include media(414) {
+      width: 100%;
+      justify-content: center;
+    } 
+  }
+  &__list {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 35px;
+    @include media(414) {
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    } 
+    input {
+      width: calc(50% - 4px);
+      max-width: calc(50% - 4px);
+      padding: 24px;
+      height: 72px;
+      border: 1px solid #E5E5E5;
+      font-size: 18px;
+      border-radius: 4px;
+      &::placeholder {
+        color: $gray;
+        font-size: 18px;
+        transition: all .3s;
+      }
+      &:focus {
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      @include media(414) {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+        height: 48px;
+      }
+    }
+  }
+  &__agree {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale3d(.3, .3, .3);
+  }
+  20% {
+    transform: translateX(-50%) scale3d(1.1, 1.1, 1.1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale3d(1.03, 1.03, 1.03);
+  }
+  
+  80% {
+    transform: translateX(-50%) scale3d(.97, .97, .97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale3d(1, 1, 1);
+  }
+}

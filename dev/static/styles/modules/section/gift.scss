@@ -1,0 +1,19 @@
+.gift {
+  &__item {
+    width: 33.3333%;
+    max-width: 33.3333%;
+  }
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+  &__body {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: $blackTitle;
+    padding: 10px;
+    background-color: #DFE7E8;
+  }
+}

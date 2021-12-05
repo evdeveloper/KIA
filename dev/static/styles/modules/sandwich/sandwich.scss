@@ -1,0 +1,38 @@
+.sandwich {
+  display: none;
+  position: relative;
+  z-index: 1000;
+  width: 24px;
+  cursor: pointer;
+  height: 16px;
+  @include media(768) {
+    display: block;
+  }
+  &.active {
+    .sandwich__line {
+      background-color: $redMenu;
+      pointer-events: none;
+      &--top {
+        top: 10px;
+        transform: rotate(45deg);
+      }
+      &--middle { opacity: 0; }
+      &--bottom {
+        top: 10px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &__line {
+    background-color: $blackText;
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transition: all linear .4s;
+    width: 100%;
+    &--top { top: 0; }
+    &--middle { top: 7px; }
+    &--bottom { top: 14px; }
+  }
+}

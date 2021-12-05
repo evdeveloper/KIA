@@ -1,0 +1,119 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @include media(1100) {
+    gap: 24px;
+  }
+  @include media(850) {
+    gap: 20px;
+  }
+  @include media(550) {
+    justify-content: center;
+  }
+  &__item {
+    flex: 0 0 calc(25% - 15px);
+    background: $white;
+    color: $black;
+    border: 0.5px solid rgba(229, 229, 229, 0.4);
+    box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    @include media(1100) {
+      flex: 0 0 calc(33.3333% - 16px);
+    }
+    @include media(850) {
+      flex: 0 0 calc(50% - 10px);
+    }
+    @include media(550) {
+      flex: 0 0 100%;
+      max-width: 350px;
+    }
+    @include media(414) {
+      max-width: 100%;
+    }
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 8px 20px;
+    span {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+  &__credit {
+    padding: 6px 12px;
+    background-color: $fiolet;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 11px;
+    color: $white;
+    svg {
+      margin-right: 8px;
+    }
+  }
+  &__caption {
+    width: 100%;
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__body {
+    padding: 10px 20px 24px;
+  }
+  &__name {
+    font-size: 16px;
+    line-height: 18px;
+    font-family: $FUbuntu;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    span { font-weight: bold; }
+  }
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-old {
+      color: $grayTwo;
+      font-size: 13px;
+      text-decoration: line-through;
+    }
+    &-new {
+      border: 2px solid $red;
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 16px;
+      color: $red;
+      font-weight: bold;
+    }
+  }
+  &__bottom {
+    background-color: $grayThree;
+    padding: 24px 20px;
+    border-radius: 0px 12px 12px 12px;
+    ul {
+      color: $blackText;
+      font-size: 13px;
+      li {
+        &:not(:last-child) {
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+  &__present {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: $red;
+    svg {
+      margin-right: 10px;
+    }
+  }
+}

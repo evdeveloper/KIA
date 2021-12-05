@@ -1,0 +1,40 @@
+section.s-offers
+  .container
+    .offers__inner
+      .offers__col
+        .offers__img 
+          img(src="static/images/img/car/1.png" alt="Белый")
+      .offers__col
+        h1.offers__title KIA RIO
+        .offers__sub НОВЫЙ КИА РИО, В НАЛИЧИИ
+        .colorAuto
+          ul.colorAuto__list
+            - for (let x = 0; x < 7; x++)
+              if x== 0
+                li.active
+              li
+        .offers__btn
+          .offers__sale
+            span Цена со скидками от:
+            .offers__price 382 000 ₽
+          .offers__credit(data-popup-target="#popupCredit")
+            span В кредит от:
+            .offers__price 5 730 ₽
+        .properties
+          .properties__item
+            .properties__text Мощность при 6300 об/мин
+            .properties__count 100 л.с.
+            img(src="static/images/img/power.svg" alt="Мощность")
+          .properties__item
+            .properties__text Расход в смешанном цикле
+            .properties__count 4,8 л. / 100 км
+            img(src="static/images/img/rate.svg" alt="Расход в смешанном цикле")
+          .properties__item
+            .properties__text Разгон до 100 км/ч
+            .properties__count 12,2 сек.
+            img(src="static/images/img/speed.svg" alt="Разгон до 100 км/ч")
+          .properties__item
+            .properties__text Максимальная скорость
+            .properties__count 185 км/ч
+            img(src="static/images/img/flow.svg" alt="Максимальная скорость")
+

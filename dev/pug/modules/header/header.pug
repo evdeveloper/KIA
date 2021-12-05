@@ -1,4 +1,60 @@
-
+header.header 
+    .header__top
+      .container 
+        .header__inner 
+          a(href="#").header__logo.logo
+            picture
+              source(srcset="static/images/img/m-logo.png" media="(max-width: 414px)")
+              img(src="static/images/img/logo.png" alt="KIA Пулково")
+          .header__location.location
+            | г. Санкт-Петербург, Московское шоссе 13А
+            br
+            a(href="#" data-scroll="#map") 
+              span посмотреть схему проезда
+          .header__phone.phone
+            a(href="tel:+78122204847") +7 (812) 220-48-47
+            br
+            span ежедневно с 09:00 до 21:00
+          button(type="button" class="Button" data-popup-target="#popupRequest")
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.60982 10.3937C12.9341 13.717 13.6882 9.87226 15.8047 11.9873C17.8453 14.0273 19.0181 14.436 16.4327 17.0206C16.1089 17.2808 14.0514 20.4119 6.82054 13.1831C-0.411191 5.95333 2.71803 3.8937 2.97835 3.56996C5.56993 0.978204 5.97159 2.15782 8.01212 4.19777C10.1287 6.31375 6.28559 7.07034 9.60982 10.3937Z" fill="white"/>
+            </svg>
+            | обратный звонок
+          .sandwich
+            .sandwich__line.sandwich__line--top
+            .sandwich__line.sandwich__line--middle
+            .sandwich__line.sandwich__line--bottom
+          .mobile-menu
+            .mobile-menu__logo
+              img(src="static/images/img/logo-kia.svg" alt="KIA")
+            .mobile-menu__links 
+              a(href="#") Новые автомобили
+              a(href="#") Автомобили с пробегом
+              a(href="#") Кредит
+              a(href="#") Trade-in
+              a(href="#") Распродажа
+              a(href="#") 
+                | Отзывы 
+                span (120)
+              a(href="#") Контакты
+            address г. Санкт-Петербург, ул. Коммуны 16Б
+            .mobile-menu__call
+              a(href="tel:+78122204847") +7 (812) 220-48-47
+              button(type="button" class="Button" data-popup-target="#popupRequest")
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.60982 10.3937C12.9341 13.717 13.6882 9.87226 15.8047 11.9873C17.8453 14.0273 19.0181 14.436 16.4327 17.0206C16.1089 17.2808 14.0514 20.4119 6.82054 13.1831C-0.411191 5.95333 2.71803 3.8937 2.97835 3.56996C5.56993 0.978204 5.97159 2.15782 8.01212 4.19777C10.1287 6.31375 6.28559 7.07034 9.60982 10.3937Z" fill="white"/>
+                </svg>
+                | обратный звонок
+    .header__body
+      .container 
+        nav.menu-nav
+          a(href="#") Новые автомобили
+          a(href="#") Автомобили с пробегом
+          a(href="#") Кредит
+          a(href="#") Trade-in
+          a(href="#") Распродажа
+          a(href="#") Отзывы (120)
+          a(href="#") Контакты
 
 
 

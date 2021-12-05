@@ -1,7 +1,21 @@
 // Colors
-$white: #ffffff;
-$black: #000000;
-
+$white:       #ffffff;
+$whiteTwo:    #FAFAFA;
+$black:       #000000;
+$blackText:   #2A2A2A;
+$black26:     #262626;
+$blackTitle:  #333333;
+$red:         #FF3D5F;
+$redMenu:     #FF0733;
+$redHover:    #D91739;
+$gray:        #828282;
+$grayTwo:     #A0A0A0;
+$grayThree:   #F2F2F2;
+$grayFour:    #C4C4C4;
+$grayFive:    #AFAFAF;
+$fiolet:      #603592;
+$activeLink:  #48276F;
+$blue:        #0264AF;
 
 
 // Sizes
@@ -23,5 +37,5 @@ $content-size: 1024px;
 
 // Fonts
 
-$base-fonts: 'RobotoRegular',Aria,sans-serif;
-$logo-name-fonts: 'RobotoMedium',Aria,sans-serif;
+$FBase: 'Montserrat', sans-serif;
+$FUbuntu: 'Ubuntu', sans-serif;

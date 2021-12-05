@@ -1,0 +1,83 @@
+.s-banner {
+  padding: 25px 0 45px;
+  margin-bottom: 40px;
+  @include media(768) {
+    padding-bottom: 15px;
+  }
+  @include media(414) {
+    padding-top: 0;
+  }
+}
+
+.banner {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    @include media(768) {
+      justify-content: space-between;
+      gap: 40px;
+    }
+    @include media(740) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  &__col {
+    width: 50%;
+    img {
+      @include media(768) {
+        max-width: none;
+        margin-left: -20%;
+      }
+      @include media(740) {
+        margin-left: 0;
+        max-width: 100%;
+      }
+      @include media(320) {
+        margin-left: -15%;
+      }
+    }
+    &:first-child {
+      @include media(768) {
+        margin-left: -25%;
+      }
+      @include media(740) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    &:last-child {
+      .Button {
+        @include media(320) {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      @include media(768) {
+        width: 65%;
+      }
+      @include media(740) {
+        width: 100%;
+      }
+    }
+  }
+  &__title {
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 140%;
+    color: $blackText;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    @include media(768) {
+      font-size: 32px;
+    }
+    @include media(740) {
+      font-size: 28px;
+    }
+    @include media(414) {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+}

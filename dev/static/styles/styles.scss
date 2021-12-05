@@ -6,11 +6,19 @@
 html {
   font-size: $base-font-size;
   height: 100%;
+  &.is-locked {
+    overflow: hidden;
+  }
 }
 
 body {
   height: 100%;
-  font-family: $base-fonts;
+  padding: 0;
+  margin: 0;
+  font-family: $FBase;
+  &._hidden {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -19,7 +27,10 @@ body {
     min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 { margin: 0; }
+h1, h2, h3, h4, h5, h6 { 
+  margin: 0; 
+  font-weight: bold;
+}
 
 ul, li {
   list-style-type: none;
@@ -43,6 +54,27 @@ textarea { resize: none; }
 
 section { position: relative; }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+section {
+  &.section-50 {
+    padding: 50px 0;
+    @include media(414) {
+      padding: 32px 0;
+    }
+  }
+  &.section-32 {
+    padding: 32px 0;
+  }
+}
+
 input,
 select,
 button { outline: none; border: none; background-color: transparent; }
@@ -53,11 +85,10 @@ button { outline: none; border: none; background-color: transparent; }
 .content { flex: 1 0 auto; }
 
 .container {
-  margin: 0 auto;
-  padding: 0 15px;
   width: 100%;
-
-
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 //Модули
