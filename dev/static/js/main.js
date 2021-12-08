@@ -1,5 +1,67 @@
 $(document).ready(function () {
 
+function optionTable() {
+  $(document).on('click', '.engine__open', function(){
+    $(this).toggleClass('active');
+    $(this).closest('.engine__top').next('.engine__body').slideToggle();
+  });
+}
+
+optionTable();
+
+function counterModel() {
+  $(document).on('click', '.engine__check input', function(e){
+    let count = 0;
+    let popupCounter = $('.modelCounter');
+    if($(this).is(':checked')) {
+      $(popupCounter).addClass('active').find('span').text(parseInt(count + 1));
+      setTimeout(()=> {
+        $(popupCounter).removeClass('active');
+      },3000);
+    }else {
+      // $(popupCounter).find('span').text(parseInt(count - 1));
+    }
+  });
+}
+
+counterModel();
+
+function saleCounter() {
+  $(document).on('click','.programs__item', function(e){
+    let sum = $('.programs__sum span');
+    let sumValue = +sum.text();
+    let sale = $(this).find('input');
+
+    if (sale.is(':checked')) {
+      setTimeout(()=> {
+        sum.text(sumValue + parseInt(sale.val()));
+      },100)
+      
+    }else {
+      setTimeout(()=> {
+        sum.text(sumValue - parseInt(sale.val()));
+      },100)
+    }
+
+  });
+}
+
+function prettify(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+saleCounter();
+
+
+function options() {
+  $(document).on('click', '.feature__table tr', function() {
+    let parent = $(this).attr('class');
+    $(this).siblings('[data-tr="'+parent+'"]').toggle();
+    return false;
+  });
+}
+
+options();
 
 function fixedMenu() {
   let nav = $('.header__body');
@@ -19,6 +81,7 @@ function colorAuto() {
   $(document).on('click', '.colorAuto li', function() {
     $(this).addClass('active').siblings().removeClass('active');
     $('.offers__img img').attr('src', `static/images/img/car/${$(this).index() + 1}.png`);
+    return false;
   });
 }
 
@@ -26,13 +89,12 @@ colorAuto();
 
 $('[data-scroll]').on('click', function(e){
   e.preventDefault();
-
   let elemId = $(this).data('scroll');
   let elemOffset = $(elemId).offset().top;
-
   $('html, body').animate({
       scrollTop: elemOffset
   },1000);
+  return false;
 
 });
 
@@ -40,7 +102,6 @@ function sandwich() {
   let body = $('body');
   $(document).on('click', '.sandwich', function(e) {
     $(this).toggleClass('active');
-    
     if (!$(this).hasClass('active')) {
       $('.mobile-menu').removeClass('active');
       $(body).css({'overflow': 'auto'});
@@ -64,42 +125,39 @@ function menuCloseTarget() {
       $(mobileMenu).removeClass('active');
       $(body).css({'overflow': 'auto'});
     }
+    return false;
   });
 }
 
 menuCloseTarget();
 
 
-const maskInput = $('input[type=tel]');
+$('input[type="tel"]').inputmask("+7 (999) 999-99-99");
 
-if ($(maskInput)) {
-  $(maskInput).keyup(function(e) {
-    if (e.keyCode === 17 || e.keyCode === 65 || e.keyCode === 97) { return false; }
-    if ($(this).val() == "") {
-      let inputMask = new Inputmask("+999999999999999",{ "placeholder": "" });
-      inputMask.mask($(this));
-    }
-    if (($(this).val().substring(0, 2) == "+7") || ($(this).val().substring(0, 1) == "7") || ($(this).val().substring(0, 2) == "+8") || ($(this).val().substring(0, 1) == "8")) {
-      let inputMask = new Inputmask('+9 (999) 999-99-99',{ "placeholder": "_" });
-      inputMask.mask($(this));
-    } else {
-      let inputMask = new Inputmask("+999999999999999",{ "placeholder": "" });
-      inputMask.mask($(this));
-    }
-    if (($(this).val().substring(0, 1) == "+") && ($(this).val().substring(0, 2) != "+7")) {
-      let inputMask = new Inputmask("999999999999999",{ "placeholder": "" });
-      inputMask.mask($(this));
-    }
-    if (($(this).val().substring(0, 1) == "8")) {
-      let inputMask = new Inputmask("9 (999) 999-99-99",{ "placeholder": "_" });
-      inputMask.mask($(this));
-    }
-    if (($(this).val().substring(0, 1) == "9")) {
-      let inputMask = new Inputmask("+7 (999) 999-99-99",{ "placeholder": "_" });
-      inputMask.mask($(this));
-    }
-  });
-}
+
+$('form').on('click','button[type="submit"]',function() {
+    let $forms = $(this).closest('form');
+    $.validator.addMethod('phonemask', function (value, element) {
+        return value.replace(/\D+/g, '').length > 10;
+    });
+    $forms.validate({
+        errorClass: 'form-error',
+        errorPlacement: function(error,element) {
+          return true;
+        },
+        rules: {
+            name: {
+              minlength: 3
+            },
+            phone: {
+              phonemask: true,
+              minlength: 10
+            }
+        }
+    });
+});
+
+
 
 function numberPrice() {
   $('.programs__item').on('click',function() {
@@ -109,9 +167,8 @@ function numberPrice() {
 
 numberPrice();
 
-ymaps.ready(init);		
 function init() {
-	var myMap = new ymaps.Map("map", {
+	let myMap = new ymaps.Map("map", {
 		center: [59.824982,30.354379],
 		zoom: 10,
       controls: []
@@ -119,12 +176,14 @@ function init() {
 		searchControlProvider: 'yandex#search'
 	});
  
-	var myPlacemark = new ymaps.Placemark([59.824982,30.354379], {
+	let myPlacemark = new ymaps.Placemark([59.824982,30.354379], {
       iconCaption: 'Автоцентр "Пулково"'
     }, {
       preset: 'islands#redIcon'
     });
     myMap.geoObjects.add(myPlacemark);
 }
+
+ymaps.ready(init);
    
 });

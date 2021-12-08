@@ -3,6 +3,17 @@
     display: flex;
     gap: 20px;
     margin-bottom: 24px;
+    @include media(1100) {
+      flex-wrap: wrap;
+    }
+    @include media(600) {
+      gap: 12px;
+    }
+  }
+  &__text {
+    @include media(900) {
+      font-size: 18px;
+    }
   }
   &__price {
     color: $red;
@@ -34,9 +45,15 @@
       }
     }
   }
+  &__bonus {
+    display: inline-flex;
+    align-items: center;
+    @include media(720) {
+      flex-direction: column;
+    }
+  }
   &__item {
     width: 25%;
-    flex: 1;
     position: relative;
     height: 120px;
     input {
@@ -73,6 +90,14 @@
         }
       }
     }
+    @include media(1100) {
+      width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+    @include media(550) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &__sale {
     display: flex;
@@ -85,14 +110,25 @@
     background: #FAFAFA;
     color: $blackTitle;
     margin-bottom: 24px;
+    @include media(720) {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
   &__sum {
-    display: inline-block;
+    padding: 0 10px;
     color: $red;
+    @include media(900) {
+      font-size: 24px;
+    }
   }
   &__info {
     display: flex;
     gap: 20px;
+    @include media(550) {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
     p {
       width: 50%;
       font-size: 14px;
@@ -107,6 +143,9 @@
           color: $blue;
           border-bottom: 1px solid;
         }
+      }
+      @include media(550) {
+        width: 100%;
       }
     }
   }

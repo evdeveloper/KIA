@@ -66,6 +66,9 @@ table {
 section {
   &.section-50 {
     padding: 50px 0;
+    @include media(768) {
+      padding: 40px 0;
+    }
     @include media(414) {
       padding: 32px 0;
     }

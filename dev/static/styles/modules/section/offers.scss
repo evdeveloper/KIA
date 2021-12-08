@@ -1,5 +1,11 @@
 .s-offers {
   padding: 24px 0;
+  @include media(500) {
+    padding-top: 0;
+  }
+  @include media(414) {
+    padding-bottom: 0;
+  }
 }
 
 .offers {
@@ -10,11 +16,30 @@
     & > * {
       &:not(:last-child) {
         margin-right: 25px;
+        @include media(850) {
+          margin-right: 0;
+        }
       }
+    }
+    @include media(850) {
+      max-width: 500px;
+      flex-direction: column;
+      margin: auto;
+    }
+    @include media(500) {
+      margin: 0 -20px;
     }
   }
   &__col {
     width: 50%;
+    &:last-child {
+      @include media(500) {
+        padding: 20px 20px 0;
+      }
+    }
+    @include media(850) {
+      width: 100%;
+    }
   }
   &__title {
     font-weight: bold;
@@ -23,6 +48,10 @@
     color: $red;
     line-height: 44px;
     margin-bottom: 4px;
+    @include media(768) {
+      font-size: 32px;
+      line-height: 40px;
+    }
   }
   &__sub {
     color: $grayTwo;
@@ -31,27 +60,55 @@
     line-height: 18px;
     font-family: $FUbuntu;
     margin-bottom: 24px;
+    @include media(768) {
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 12px;
+    }
   }
   &__btn {
     display: flex;
     gap: 12px;
     margin-bottom: 36px;
+    span {
+      @include media(450) {
+        max-width: 100px;
+      }
+    }
+    @include media(450) {
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 0 -20px 24px;
+    }
   }
   &__sale,
   &__credit {
     width: 195px;
     flex: 0 0 195px;
-    height: 80px;
     padding: 14px 24px;
     cursor: pointer;
     span {
       font-size: 13px;
+    }
+    @include media(850) {
+      padding: 10px 14px; 
+    }
+    @include media(450) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      flex: 0 0 100%;
     }
   }
   &__price {
     font-weight: bold;
     font-size: 28px;
     line-height: 34px;
+    @include media(850) {
+      font-size: 18px;
+      line-height: 26px;
+    }
   }
   &__sale {
     background-color: #F5F5F5;
@@ -123,32 +180,62 @@
 .properties {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   &__text {
     font-size: 12px;
     line-height: 14px;
     color: $grayTwo;
+    @include media(450) {
+      font-size: 11px;
+    }
+    @include media(370) {
+      font-size: 13px;
+    }
   }
   &__count {
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
     color: $gray;
+    @include media(850) {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
   &__item {
+    width: calc(50% - 25px);
+    max-width: calc(50% - 25px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    width: calc(50% - 25px);
-    max-width: calc(50% - 25px);
     height: 48px;
     margin-bottom: 24px;
     padding-left: 60px;
+    &:last-child {
+      @include media(370) {
+        margin-bottom: 0;
+      }
+    }
     img {
       position: absolute;
       width: 48px;
       top: 0;
       left: 0;
+      @include media(450) {
+        width: 35px;
+      }
+    }
+    @include media(450) {
+      width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+      padding-left: 45px;
+    }
+    @include media(370) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 45px;
+      margin-bottom: 12px;
     }
   }
 }

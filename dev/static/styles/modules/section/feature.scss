@@ -1,6 +1,9 @@
 .feature {
+  &__inner {
+    overflow: auto;
+  }
   &__table {
-    width: 100%;
+    width: 1180px;
     thead {
       tr {
         background-color: #F5F5F5;
@@ -27,6 +30,11 @@
     }
     tbody {
       tr {
+        &:first-child {
+          td {
+            &:not(:first-child) { opacity: 0; }
+          }
+        }
         &:nth-child(odd) {
           background-color: #F5F5F5;
         }
@@ -58,6 +66,7 @@
       display: flex;
       cursor: pointer;
       font-weight: bold;
+      user-select: none;
       font-size: 18px;
       color: $blackTitle;
       &.active {

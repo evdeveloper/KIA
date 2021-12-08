@@ -19,7 +19,7 @@
   }
   &#{$this}--big {
     padding: 24px 42px;
-    @include media(768) {
+    @include media(1100) {
       padding: 18px 24px;
     }
   }
@@ -51,6 +51,10 @@
   font-weight: bold;
   font-family: $FUbuntu;
   border-radius: 2px;
+  @include media(414) {
+    width: 100%;
+    justify-content: center;
+  }
   &:hover {
     box-shadow: inset 0px 0px 10px $red;
   }

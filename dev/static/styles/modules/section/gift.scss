@@ -1,11 +1,31 @@
 .gift {
+  &__top {
+    height: 120px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   &__item {
     width: 33.3333%;
     max-width: 33.3333%;
+    @include media(600) {
+      width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+    @include media(414) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &__list {
     display: flex;
     gap: 20px;
+    @include media(600) {
+      flex-wrap: wrap;
+      justify-content: center;
+    } 
   }
   &__body {
     text-align: center;
@@ -15,5 +35,14 @@
     color: $blackTitle;
     padding: 10px;
     background-color: #DFE7E8;
+    span {
+      @include media(1100) {
+        display: block;
+      }
+    }
+    @include media(768) {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 }

@@ -8,6 +8,25 @@
     width: calc(20% - 3.2px);
     max-width: calc(20% - 3.2px);
     height: 175px;
+    @include media(900) {
+      width: calc(25% - 3px);
+      max-width: calc(25% - 3px);
+    }
+    @include media(768) {
+      width: calc(33.3333% - 2.666px);
+      max-width: calc(33.3333% - 2.666px);
+    }
+    @include media(500) {
+      width: calc(50% - 2px);
+      max-width: calc(50% - 2px);
+    }
+    @include media(375) {
+      width: 100%;
+      max-width: 100%;
+    }
+    @include media(414) {
+      height: 130px;
+    }
     a {
       display: flex;
       width: 100%;

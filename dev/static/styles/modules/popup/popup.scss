@@ -162,6 +162,7 @@
       height: 72px;
       border: 1px solid #E5E5E5;
       font-size: 18px;
+      transition: all .3s;
       border-radius: 4px;
       &::placeholder {
         color: $gray;
@@ -172,6 +173,12 @@
         &::placeholder {
           opacity: 0;
         }
+      }
+      &.form-error {
+        border-color: $red;
+        color: $red;
+        background: rgba(255, 61, 95, 0.2);
+        &::placeholder { color: $red; }
       }
       @include media(414) {
         width: 100%;
