@@ -1,6 +1,11 @@
 
 $(document).ready(function() {
 
+  const scrollY = document.body.style.top;
+  document.body.style.position = '';
+  document.body.style.top = '';
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
 	let popup = {};
 	
 	popup.class = {
@@ -32,36 +37,33 @@ $(document).ready(function() {
 	};
 	
 	popup.lockScreen = function() {	
-		let html = $('html');
+		let body = $('body');
 		let lockedClass = 'is-locked';
 		let paddingRight;
-		let body;
 		
-		if (!html.hasClass(lockedClass)) {
+		if (!body.hasClass(lockedClass)) {
 			body = $(document.body);
 			paddingRight = parseInt(body.css('padding-right'), 10) + popup.getScrollbarWidth();
 			body.css('padding-right', paddingRight + 'px');
-			html.addClass(lockedClass);
+			body.addClass(lockedClass);
 		}
 	};
 	
 	popup.unlockScreen = function() {
-		let html = $('html');
+		let body = $('body');
 		let lockedClass = 'is-locked';
 		let paddingRight;
-		let body;
 		
-		if (html.hasClass(lockedClass)) {
+		if (body.hasClass(lockedClass)) {
 			body = $(document.body);
 			paddingRight = parseInt(body.css('padding-right'), 10) - popup.getScrollbarWidth();
 			body.css('padding-right', paddingRight + 'px');
-			html.removeClass(lockedClass);
+			body.removeClass(lockedClass);
 		}
 	};
 	
 	popup.show = function(id) {
 		let current = $('[data-popup-id="' + id + '"]');
-		
 		if (!current.hasClass(popup.class.show)) {
 			popup.lockScreen();
 	
@@ -81,7 +83,8 @@ $(document).ready(function() {
 	};
 	
 	
-		$(document).on('click', '[data-popup-target]', function() {
+		$(document).on('click', '[data-popup-target]', function(e) {
+      e.preventDefault();
 			popup.show($(this).data('popup-target'));
 			return false;
 		});

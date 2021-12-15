@@ -2,12 +2,10 @@
   &__inner {
     display: flex;
     margin-bottom: 12px;
-    gap: 16px;
     @include media(1100) {
       flex-direction: column;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 24px;
     }
     .Button {
       @include media(414) {
@@ -38,6 +36,7 @@
   &__input {
     flex: 1;
     height: 72px;
+    margin-right: 16px;
     input {
       width: 100%;
       height: 100%;
@@ -71,16 +70,28 @@
       height: 48px;
     }
     @include media(1100) {
+      width: 100%;
       flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 24px;
     }
   }
   &__inputs {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    .blockForm__input {
+      &:last-child {
+        @include media(1100) {
+          margin-bottom: 0;
+        }
+      }
+      @include media(1100) {
+        margin-bottom: 8px;
+      }
+    }
     @include media(1100) {
-      gap: 8px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -174,5 +185,20 @@
   z-index: 999;
   right: -200%;
   transition: right .8s ease;
+  span { font-weight: bold; }
+  p {
+    @extend span;
+    font-size: 14px;
+    text-align: center;
+    color: $red;
+    margin-top: 5px;
+    @include media(768) {
+      font-size: 12px;
+    }
+  }
+  @include media(768) {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
   &.active { right: 20px; }
 }

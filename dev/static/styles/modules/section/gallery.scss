@@ -2,23 +2,24 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    margin-right: -4px;
   }
   &__item {
-    width: calc(20% - 3.2px);
-    max-width: calc(20% - 3.2px);
+    width: calc(20% - 4px);
+    max-width: calc(20% - 4px);
     height: 175px;
+    margin: 0 4px 4px 0;
     @include media(900) {
-      width: calc(25% - 3px);
-      max-width: calc(25% - 3px);
+      width: calc(25% - 4px);
+      max-width: calc(25% - 4px);
     }
     @include media(768) {
-      width: calc(33.3333% - 2.666px);
-      max-width: calc(33.3333% - 2.666px);
+      width: calc(33.3333% - 4px);
+      max-width: calc(33.3333% - 4px);
     }
     @include media(500) {
-      width: calc(50% - 2px);
-      max-width: calc(50% - 2px);
+      width: calc(50% - 4px);
+      max-width: calc(50% - 4px);
     }
     @include media(375) {
       width: 100%;

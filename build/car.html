@@ -90,7 +90,7 @@
                   </ul>
                 </div>
                 <div class="offers__btn">
-                  <div class="offers__sale"><span>Цена со скидками от:</span>
+                  <div class="offers__sale" data-popup-target="#popupRequestModel"><span>Цена со скидками от:</span>
                     <div class="offers__price">382 000 ₽</div>
                   </div>
                   <div class="offers__credit" data-popup-target="#popupCredit"><span>В кредит от:</span>
@@ -300,8 +300,8 @@
         <section class="s-options section-50">
           <div class="container">
             <div class="options">
-              <h2 class="options__title section-title title-black">Комплектации и цены
-                <button class="Button Button--big Button--z18" type="submit">
+              <h2 class="options__title section-title title-black"><span>Комплектации и цены</span>
+                <button class="Button Button--big Button--z18 js-option" type="button">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.5611 14.0196C20.4611 14.0196 22 15.5325 22 17.3992C22 19.2648 20.4611 20.7778 18.5611 20.7778C16.6623 20.7778 15.1223 19.2648 15.1223 17.3992C15.1223 15.5325 16.6623 14.0196 18.5611 14.0196ZM10.0833 15.958C10.9155 15.958 11.5911 16.6217 11.5911 17.4393C11.5911 18.2558 10.9155 18.9206 10.0833 18.9206H3.50777C2.67555 18.9206 2 18.2558 2 17.4393C2 16.6217 2.67555 15.958 3.50777 15.958H10.0833ZM5.43887 3C7.33886 3 8.87774 4.51298 8.87774 6.37856C8.87774 8.24523 7.33886 9.75821 5.43887 9.75821C3.53999 9.75821 2 8.24523 2 6.37856C2 4.51298 3.53999 3 5.43887 3ZM20.4933 4.89833C21.3244 4.89833 22 5.56203 22 6.37856C22 7.19618 21.3244 7.85989 20.4933 7.85989H13.9178C13.0856 7.85989 12.4101 7.19618 12.4101 6.37856C12.4101 5.56203 13.0856 4.89833 13.9178 4.89833H20.4933Z" fill="white"/>
 </svg>Сравнение
@@ -1584,6 +1584,254 @@
                 </form>
               </div>
             </div>
+            <div class="compare">
+              <h2 class="options__title section-title title-black"><span>Сравнение</span>
+                <button class="Button Button--big Button--z18 js-compare" type="button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.92 13.4697C9.33 13.4697 10.46 14.6107 10.46 16.0307V19.4397C10.46 20.8497 9.33 21.9997 7.92 21.9997H4.54C3.14 21.9997 2 20.8497 2 19.4397V16.0307C2 14.6107 3.14 13.4697 4.54 13.4697H7.92ZM19.4601 13.4697C20.8601 13.4697 22.0001 14.6107 22.0001 16.0307V19.4397C22.0001 20.8497 20.8601 21.9997 19.4601 21.9997H16.0801C14.6701 21.9997 13.5401 20.8497 13.5401 19.4397V16.0307C13.5401 14.6107 14.6701 13.4697 16.0801 13.4697H19.4601ZM7.92 2C9.33 2 10.46 3.15 10.46 4.561V7.97C10.46 9.39 9.33 10.53 7.92 10.53H4.54C3.14 10.53 2 9.39 2 7.97V4.561C2 3.15 3.14 2 4.54 2H7.92ZM19.4601 2C20.8601 2 22.0001 3.15 22.0001 4.561V7.97C22.0001 9.39 20.8601 10.53 19.4601 10.53H16.0801C14.6701 10.53 13.5401 9.39 13.5401 7.97V4.561C13.5401 3.15 14.6701 2 16.0801 2H19.4601Z" fill="white"/>
+</svg>Комплектации и цены
+                </button>
+              </h2>
+              <div class="feature__inner">
+                <table class="feature__table"> 
+                  <thead>
+                    <tr> 
+                      <th>Характеристика</th>
+                      <th data-compare-model="1">1.4 МТ 100 л.с.</th>
+                      <th data-compare-model="2">1.6 МТ 123 л.с.</th>
+                      <th data-compare-model="3">1.4 AT 100 л.с.</th>
+                    </tr>
+                    <tr>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody> 
+                    <tr class="engine" data-tr="tab">
+                      <td>
+                        <div class="feature-tbody__top">
+                          Двигатель<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+</svg>
+                        </div>
+                      </td>
+                      <td>бензиновый</td>
+                      <td>бензиновый</td>
+                      <td>бензиновый</td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Cистема помощи при трогании на подъеме</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Антиблокировочная система</td>
+                      <td class="no"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Боковые подушки и шторки безопасности</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Антиблокировочная система</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Задние дисковые тормоза</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Интегрированная система активного управления</td>
+                      <td class="no"></td>
+                      <td class="yes"></td>
+                      <td class="no"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Передние дисковые тормоза</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="no"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Система контроля давления в шинах</td>
+                      <td class="yes"></td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Система курсовой устойчивости</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Система предупреждения об экстренном торможении</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Система экстренной связи ЭРА-ГЛОНАСС</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Стальное запасное колесо временного использования</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="engine">
+                      <td>Фронтальные подушки безопасности</td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                    </tr>
+                    <tr>
+                      <td data-td="border"></td>
+                    </tr>
+                    <tr class="size" data-tr="tab">
+                      <td>
+                        <div class="feature-tbody__top">
+                          Габаритные размеры<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+</svg>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-tr="size">
+                      <td>Количество передач</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="size">
+                      <td>Марка топлива</td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="size">
+                      <td>Марка топлива</td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr>
+                      <td data-td="border"></td>
+                    </tr>
+                    <tr class="dynamic" data-tr="tab">
+                      <td>
+                        <div class="feature-tbody__top">
+                          Динамические характеристики<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+</svg>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-tr="dynamic">
+                      <td>Количество передач</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="dynamic">
+                      <td>Марка топлива</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="dynamic">
+                      <td>Марка топлива</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr>
+                      <td data-td="border"></td>
+                    </tr>
+                    <tr class="drop" data-tr="tab">
+                      <td>
+                        <div class="feature-tbody__top">
+                          Подвеска<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+</svg>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-tr="drop">
+                      <td>Количество передач</td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                      <td class="no"></td>
+                    </tr>
+                    <tr data-tr="drop">
+                      <td>Марка топлива</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="drop">
+                      <td>Марка топлива</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr>
+                      <td data-td="border"></td>
+                    </tr>
+                    <tr class="fuel" data-tr="tab">
+                      <td>
+                        <div class="feature-tbody__top">
+                          Расход топлива<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+</svg>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-tr="fuel">
+                      <td>Количество передач</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="fuel">
+                      <td>Марка топлива</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                    <tr data-tr="fuel">
+                      <td>Марка топлива</td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                      <td class="yes"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
         <section class="s-feature section-50">
@@ -1598,14 +1846,13 @@
                       <th>1.4 МТ 100 л.с.</th>
                       <th>1.6 МТ 123 л.с.</th>
                       <th>1.4 AT 100 л.с.</th>
-                      <th>1.6 AT 123 л.с.</th>
                     </tr>
                     <tr>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody> 
-                    <tr class="engine">
+                    <tr class="engine" data-tr="tab">
                       <td>
                         <div class="feature-tbody__top">
                           Двигатель<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1616,18 +1863,15 @@
                       <td>бензиновый</td>
                       <td>бензиновый</td>
                       <td>бензиновый</td>
-                      <td>бензиновый</td>
                     </tr>
                     <tr data-tr="engine">
                       <td>Количество передач</td>
                       <td>6</td>
                       <td>6</td>
                       <td>6</td>
-                      <td>6</td>
                     </tr>
                     <tr data-tr="engine">
                       <td>Марка топлива</td>
-                      <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
@@ -1643,11 +1887,9 @@
                       <td>1.4</td>
                       <td>1.6</td>
                       <td>1.4</td>
-                      <td>1.6</td>
                     </tr>
                     <tr data-tr="engine">
                       <td>Привод</td>
-                      <td>передний</td>
                       <td>передний</td>
                       <td>передний</td>
                       <td>передний</td>
@@ -1657,11 +1899,9 @@
                       <td>бензиновый</td>
                       <td>бензиновый</td>
                       <td>бензиновый</td>
-                      <td>бензиновый</td>
                     </tr>
                     <tr data-tr="engine">
                       <td>Топливный бак (л)</td>
-                      <td>50</td>
                       <td>50</td>
                       <td>50</td>
                       <td>50</td>
@@ -1671,12 +1911,11 @@
                       <td>MT</td>
                       <td>MT</td>
                       <td>AT</td>
-                      <td>MT</td>
                     </tr>
                     <tr>
-                      <td style="padding: 6px;"></td>
+                      <td data-td="border"></td>
                     </tr>
-                    <tr class="size">
+                    <tr class="size" data-tr="tab">
                       <td>
                         <div class="feature-tbody__top">
                           Габаритные размеры<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1687,11 +1926,9 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td></td>
                     </tr>
                     <tr data-tr="size">
                       <td>Количество передач</td>
-                      <td>6</td>
                       <td>6</td>
                       <td>6</td>
                       <td>6</td>
@@ -1701,12 +1938,11 @@
                       <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
-                      <td>АИ-92</td>
                     </tr>
                     <tr>
-                      <td style="padding: 6px;"></td>
+                      <td data-td="border"></td>
                     </tr>
-                    <tr class="dynamic">
+                    <tr class="dynamic" data-tr="tab">
                       <td>
                         <div class="feature-tbody__top">
                           Динамические характеристики<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1717,11 +1953,9 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td></td>
                     </tr>
                     <tr data-tr="dynamic">
                       <td>Количество передач</td>
-                      <td>6</td>
                       <td>6</td>
                       <td>6</td>
                       <td>6</td>
@@ -1731,12 +1965,11 @@
                       <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
-                      <td>АИ-92</td>
                     </tr>
                     <tr>
-                      <td style="padding: 6px;"></td>
+                      <td data-td="border"></td>
                     </tr>
-                    <tr class="drop">
+                    <tr class="drop" data-tr="tab">
                       <td>
                         <div class="feature-tbody__top">
                           Подвеска<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1747,11 +1980,9 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td></td>
                     </tr>
                     <tr data-tr="drop">
                       <td>Количество передач</td>
-                      <td>6</td>
                       <td>6</td>
                       <td>6</td>
                       <td>6</td>
@@ -1761,12 +1992,11 @@
                       <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
-                      <td>АИ-92</td>
                     </tr>
                     <tr>
-                      <td style="padding: 6px;"></td>
+                      <td data-td="border"></td>
                     </tr>
-                    <tr class="fuel">
+                    <tr class="fuel" data-tr="tab">
                       <td>
                         <div class="feature-tbody__top">
                           Расход топлива<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1777,18 +2007,15 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td></td>
                     </tr>
                     <tr data-tr="fuel">
                       <td>Количество передач</td>
                       <td>6</td>
                       <td>6</td>
                       <td>6</td>
-                      <td>6</td>
                     </tr>
                     <tr data-tr="fuel">
                       <td>Марка топлива</td>
-                      <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
                       <td>АИ-92</td>
@@ -1981,7 +2208,9 @@
           </div>
         </section>
         <div class="modelCounter">
-           комплектаций в сравнении - <span>0</span></div>
+           комплектаций в сравнении - <span>0</span>
+          <p>Не более 3-х вариантов!</p>
+        </div>
       </main>
       <footer class="footer">
         <div class="footer__top">
@@ -2040,8 +2269,30 @@
         </svg>
       </div>
       <div class="popup__title">Отправить заявку</div>
+      <form class="popupForm" action="/">
+        <div class="popupForm__list">
+          <input type="text" name="name" aria-label="name" required placeholder="Ваше имя">
+          <input type="tel" name="phone" aria-label="phone" required placeholder="Телефон">
+        </div>
+        <button class="Button Button--request Button--big" type="submit">
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.3225 1.40907C22.7222 0.793011 21.8338 0.563498 21.0055 0.805091L1.6896 6.42212C0.815638 6.66492 0.196185 7.36192 0.0293162 8.24736C-0.141154 9.1485 0.45429 10.2924 1.23221 10.7708L7.27188 14.4829C7.89134 14.8634 8.69086 14.7679 9.20347 14.2509L16.1195 7.29186C16.4676 6.92947 17.0439 6.92947 17.392 7.29186C17.7402 7.64217 17.7402 8.20991 17.392 8.5723L10.464 15.5326C9.95018 16.0484 9.85414 16.8517 10.2323 17.475L13.9226 23.5752C14.3548 24.3 15.0991 24.7107 15.9154 24.7107C16.0115 24.7107 16.1195 24.7107 16.2155 24.6986C17.1519 24.5778 17.8962 23.9376 18.1723 23.0316L23.8987 3.74044C24.1508 2.91903 23.9227 2.02513 23.3225 1.40907Z" fill="white"></path>
+          </svg>Отправить заявку
+        </button>
+        <div class="popupForm__agree agree">
+           Нажимая на кнопку "Отправить заявку" вы даете согласие на обработку <a href="#"> <span>персональных данных</span></a></div>
+      </form>
+    </div>
+    <div class="popup popup__request" data-popup-id="#popupRequestModel">
+      <div class="popup__close" data-popup-close>
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.6447 17.9411L35.6152 0.970562L37.0294 2.38478L20.0589 19.3553L37.0294 36.3259L35.6152 37.7401L18.6447 20.7696L1.67409 37.7401L0.259876 36.3259L17.2304 19.3553L0.259877 2.38478L1.67409 0.970562L18.6447 17.9411Z" fill="#333333"></path>
+        </svg>
+      </div>
+      <div class="popup__title">Отправить заявку</div>
       <ul class="autoOptions"> 
         <li class="autoOptions__item" data-auto="model">Автомобиль: <b>KIA RIO</b></li>
+        <li class="autoOptions__item" data-auto="equipment">Комплектация: <b>COMFORT</b></li>
       </ul>
       <form class="popupForm" action="/">
         <div class="popupForm__list">

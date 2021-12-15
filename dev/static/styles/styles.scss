@@ -6,7 +6,8 @@
 html {
   font-size: $base-font-size;
   height: 100%;
-  &.is-locked {
+  &.is-locked,
+  &.hidden {
     overflow: hidden;
   }
 }
@@ -16,7 +17,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: $FBase;
-  &._hidden {
+  &.is-locked {
     overflow: hidden;
   }
 }

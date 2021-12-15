@@ -2,8 +2,8 @@ section.s-options.section-50
   .container
     .options
       h2.options__title.section-title.title-black
-        | Комплектации и цены
-        button(type="submit" class="Button Button--big Button--z18")
+        span Комплектации и цены
+        button(type="button" class="Button Button--big Button--z18 js-option")
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.5611 14.0196C20.4611 14.0196 22 15.5325 22 17.3992C22 19.2648 20.4611 20.7778 18.5611 20.7778C16.6623 20.7778 15.1223 19.2648 15.1223 17.3992C15.1223 15.5325 16.6623 14.0196 18.5611 14.0196ZM10.0833 15.958C10.9155 15.958 11.5911 16.6217 11.5911 17.4393C11.5911 18.2558 10.9155 18.9206 10.0833 18.9206H3.50777C2.67555 18.9206 2 18.2558 2 17.4393C2 16.6217 2.67555 15.958 3.50777 15.958H10.0833ZM5.43887 3C7.33886 3 8.87774 4.51298 8.87774 6.37856C8.87774 8.24523 7.33886 9.75821 5.43887 9.75821C3.53999 9.75821 2 8.24523 2 6.37856C2 4.51298 3.53999 3 5.43887 3ZM20.4933 4.89833C21.3244 4.89833 22 5.56203 22 6.37856C22 7.19618 21.3244 7.85989 20.4933 7.85989H13.9178C13.0856 7.85989 12.4101 7.19618 12.4101 6.37856C12.4101 5.56203 13.0856 4.89833 13.9178 4.89833H20.4933Z" fill="white"/>
           </svg>
@@ -575,7 +575,6 @@ section.s-options.section-50
                       ul 
                         li Передние стеклоподъёмники с электроприводом
                         li Регулировка рулевой колонки по высоте
-            
           .engine__item
             .engine__title
               b 1.6 AT 
@@ -975,3 +974,205 @@ section.s-options.section-50
                       ul 
                         li Передние стеклоподъёмники с электроприводом
                         li Регулировка рулевой колонки по высоте
+    .compare
+      h2.options__title.section-title.title-black
+        span Сравнение
+        button(type="button" class="Button Button--big Button--z18 js-compare")
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.92 13.4697C9.33 13.4697 10.46 14.6107 10.46 16.0307V19.4397C10.46 20.8497 9.33 21.9997 7.92 21.9997H4.54C3.14 21.9997 2 20.8497 2 19.4397V16.0307C2 14.6107 3.14 13.4697 4.54 13.4697H7.92ZM19.4601 13.4697C20.8601 13.4697 22.0001 14.6107 22.0001 16.0307V19.4397C22.0001 20.8497 20.8601 21.9997 19.4601 21.9997H16.0801C14.6701 21.9997 13.5401 20.8497 13.5401 19.4397V16.0307C13.5401 14.6107 14.6701 13.4697 16.0801 13.4697H19.4601ZM7.92 2C9.33 2 10.46 3.15 10.46 4.561V7.97C10.46 9.39 9.33 10.53 7.92 10.53H4.54C3.14 10.53 2 9.39 2 7.97V4.561C2 3.15 3.14 2 4.54 2H7.92ZM19.4601 2C20.8601 2 22.0001 3.15 22.0001 4.561V7.97C22.0001 9.39 20.8601 10.53 19.4601 10.53H16.0801C14.6701 10.53 13.5401 9.39 13.5401 7.97V4.561C13.5401 3.15 14.6701 2 16.0801 2H19.4601Z" fill="white"/>
+          </svg>
+          | Комплектации и цены
+      .feature__inner
+        table.feature__table 
+          thead
+            tr 
+              th Характеристика
+              th(data-compare-model="1") 1.4 МТ 100 л.с.
+              th(data-compare-model="2") 1.6 МТ 123 л.с.
+              th(data-compare-model="3") 1.4 AT 100 л.с.
+            tr
+              th
+          tbody 
+            tr.engine(data-tr="tab")
+              td
+                .feature-tbody__top
+                  | Двигатель
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+                  </svg>
+              td бензиновый
+              td бензиновый
+              td бензиновый
+            tr(data-tr="engine")
+              td Cистема помощи при трогании на подъеме
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Антиблокировочная система
+              td.no
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Боковые подушки и шторки безопасности
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Антиблокировочная система
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Задние дисковые тормоза
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Интегрированная система активного управления
+              td.no
+              td.yes
+              td.no
+            tr(data-tr="engine")
+              td Передние дисковые тормоза
+              td.yes
+              td.yes
+              td.no
+            tr(data-tr="engine")
+              td Система контроля давления в шинах
+              td.yes
+              td.no
+              td.no
+            tr(data-tr="engine")
+              td Система курсовой устойчивости
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Система предупреждения об экстренном торможении
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Система экстренной связи ЭРА-ГЛОНАСС
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Стальное запасное колесо временного использования
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="engine")
+              td Фронтальные подушки безопасности
+              td.no
+              td.no
+              td.no
+            tr
+              td(data-td="border")
+            tr.size(data-tr="tab")
+              td
+                .feature-tbody__top
+                  | Габаритные размеры
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+                  </svg>
+              td
+              td
+              td
+            tr(data-tr="size")
+              td Количество передач
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="size")
+              td Марка топлива
+              td.no
+              td.no
+              td.yes
+            tr(data-tr="size")
+              td Марка топлива
+              td.no
+              td.no
+              td.yes
+            tr
+              td(data-td="border")
+            tr.dynamic(data-tr="tab")
+              td
+                .feature-tbody__top
+                  | Динамические характеристики
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+                  </svg>
+              td
+              td
+              td
+            tr(data-tr="dynamic")
+              td Количество передач
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="dynamic")
+              td Марка топлива
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="dynamic")
+              td Марка топлива
+              td.yes
+              td.yes
+              td.yes
+            tr
+              td(data-td="border")
+            tr.drop(data-tr="tab")
+              td
+                .feature-tbody__top
+                  | Подвеска
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+                  </svg>
+              td
+              td
+              td
+            tr(data-tr="drop")
+              td Количество передач
+              td.no
+              td.no
+              td.no
+            tr(data-tr="drop")
+              td Марка топлива
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="drop")
+              td Марка топлива
+              td.yes
+              td.yes
+              td.yes
+            tr
+              td(data-td="border")
+            tr.fuel(data-tr="tab")
+              td
+                .feature-tbody__top
+                  | Расход топлива
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99991 8.08569L9.99991 12.0857L13.9999 8.08569L15.4141 9.49991L9.99991 14.9141L4.58569 9.49991L5.99991 8.08569Z" fill="black"/>
+                  </svg>
+              td
+              td
+              td
+            tr(data-tr="fuel")
+              td Количество передач
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="fuel")
+              td Марка топлива
+              td.yes
+              td.yes
+              td.yes
+            tr(data-tr="fuel")
+              td Марка топлива
+              td.yes
+              td.yes
+              td.yes

@@ -68,8 +68,16 @@
   }
   &__btn {
     display: flex;
-    gap: 12px;
     margin-bottom: 36px;
+    & > * {
+      &:not(:last-child) {
+        margin-right: 12px;
+        @include media(450) {
+          margin-right: 0;
+          margin-bottom: 4px;
+        }
+      }
+    }
     span {
       @include media(450) {
         max-width: 100px;
@@ -77,7 +85,6 @@
     }
     @include media(450) {
       flex-wrap: wrap;
-      gap: 4px;
       margin: 0 -20px 24px;
     }
   }
