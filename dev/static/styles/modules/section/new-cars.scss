@@ -1,0 +1,42 @@
+.new-cars {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    @include media(414) {
+      margin-bottom: 12px;
+    }
+  }
+  &__col {
+    width: calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    margin: 0 20px 20px 0;
+    @include media(768) {
+      width: calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+    @include media(414) {
+      width: 100%;
+      max-width: 100%;
+      &:not(:nth-child(-n+2)) {
+        display: none;
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    transition: all .3s;
+    padding: 5px 0;
+    box-shadow: inset 0px -1px 0px #E0E0E0;
+    color: $gray;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    &:hover {
+      color: $red;
+      box-shadow: inset 0px -1px 0px $red;
+    }
+  }
+}

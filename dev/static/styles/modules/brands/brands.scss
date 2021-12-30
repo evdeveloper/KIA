@@ -1,0 +1,56 @@
+.brands {
+  padding: 45px 0 30px;
+  background-color: $whiteTwo;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    width: calc(10% - 15px);
+    max-width: calc(10% - 15px);
+    height: 75px;
+    margin: 0 15px 15px 0;
+    &:nth-child(n+10) {
+      display: none;
+    }
+    &:last-child {
+      display: flex;
+    }
+    &.active {
+      .brands__show {
+        span {
+          &:first-child { display: none; }
+          &:last-child { display: block; }
+        }
+        svg { transform: rotate(180deg);}
+      }
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+  &__show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    margin: auto;
+    padding: 10px;
+    color: $white;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    background-color: $red;
+    span {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

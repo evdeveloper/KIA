@@ -1,0 +1,23 @@
+extends template/main
+
+block variables
+  - var title = 'Каталог'
+  - var pageClass = ''
+  - var catalog = true
+
+
+
+block content
+  include modules/section/banner
+  include modules/section/sort
+  include modules/section/filters
+  include modules/section/audi
+  include modules/section/kia
+  include modules/section/sale
+  include modules/section/audi
+  include modules/section/kia
+  include modules/section/saving-time
+  include modules/section/contacts
+
+block script
+  script(src="static/js/choices.min.js")

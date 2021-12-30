@@ -1,0 +1,26 @@
+extends template/main
+
+block variables
+  - var title = 'Галерея'
+  - var pageClass = 'gallery-page'
+
+
+
+block content
+  .breadcrumbs
+    .container
+      .breadcrumbs__list
+        a(href="#") Главная
+        a(href="#") Автомобили с пробегом
+        a(href="#") Подержанные автомобили Шевроле, Санкт-Петербург, цены
+        span Купить б\у Chevrolet Aveo, 2012 г.
+        
+  include modules/section/review
+  include modules/section/programs
+  include modules/section/bestseller
+  include modules/section/autocredit
+  include modules/section/contacts
+
+block script
+  script(src="static/js/fancybox.min.js")
+  script(src="static/js/choices.min.js")

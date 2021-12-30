@@ -9,9 +9,25 @@
     max-width: calc(20% - 4px);
     height: 175px;
     margin: 0 4px 4px 0;
+    &.gallery-all {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $grayTwo;
+      font-weight: bold;
+      font-size: 20px;
+      color: $white;
+      cursor: pointer;
+    }
+    &:not(:nth-child(-n+9)):not(:last-child) {
+      display: none;
+    }
     @include media(900) {
       width: calc(25% - 4px);
       max-width: calc(25% - 4px);
+      &:not(:nth-child(-n+7)):not(:last-child) {
+        display: none;
+      }
     }
     @include media(768) {
       width: calc(33.3333% - 4px);
@@ -20,6 +36,9 @@
     @include media(500) {
       width: calc(50% - 4px);
       max-width: calc(50% - 4px);
+      &:not(:nth-child(-n+5)):not(:last-child) {
+        display: none;
+      }
     }
     @include media(375) {
       width: 100%;

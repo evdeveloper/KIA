@@ -38,7 +38,7 @@ module.exports = function () {
         return $.gulp.src([scriptsPATH.input + '*.js',
             '!' + scriptsPATH.input + 'libs.min.js'])
             .pipe(concat('main.min.js'))
-            .pipe(uglify())
+            .pipe(uglify({ output: { comments: false } }))
             .pipe($.gulp.dest(scriptsPATH.ouput))
     });
 };

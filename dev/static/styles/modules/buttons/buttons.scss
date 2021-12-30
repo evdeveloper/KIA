@@ -2,6 +2,7 @@
   $this: &;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 18px 24px;
   cursor: pointer;
   background: $red;
@@ -19,14 +20,26 @@
   }
   &#{$this}--big {
     padding: 24px 42px;
+    height: 72px;
     @include media(1100) {
       padding: 18px 24px;
+      height: 56px;
     }
   }
-  &#{$this}--z18 {
-    font-size: 18px;
+  &#{$this}--reset {
+    font-weight: normal;
+    border-radius: 2px;
+    border: 1px solid $gray;
+    color: $gray;
+    background-color: transparent;
+    box-shadow: none;
+    &:hover {
+      background-color: transparent;
+      box-shadow: none;
+    }
+    
   }
-  &#{$this}--request {
+  &#{$this}--z18 {
     font-size: 18px;
   }
   &:hover {

@@ -1,0 +1,136 @@
+.s-review {
+  padding: 30px 0 40px;
+  @include media(768) {
+    padding-top: 12px;
+  }
+}
+
+.review {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  &__col {
+    width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    @include media(768) {
+      width: 100%;
+      max-width: 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 40px;
+      @include media(768) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    .offers__sub {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+.r-gallery {
+  display: flex;
+  height: 480px;
+  @include media(1000) {
+    height: 400px;
+  }
+  @include media(768) {
+    height: 550px;
+  }
+  @include media(600) {
+    height: 350px;
+  }
+  @include media(414) {
+    height: 280px;
+  }
+  @include media(320) {
+    height: 230px;
+  }
+  & > * {
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &__big {
+    width: calc(80% - 2px);
+  }
+  &__list {
+    width: calc(20% - 2px);
+    display: flex;
+    flex-direction: column;
+  }
+  &__img {
+    flex: 1 1 auto;
+    height: calc(25% - 3px);
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.equipment {
+  display: flex;
+  flex-wrap: wrap;
+  &__col {
+    width: calc(50% - 15px);
+    max-width: calc(50% - 15px);
+    @include media(768) {
+      width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+    @include media(600) {
+      width: 100%;
+      max-width: 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 30px;
+      @include media(768) {
+        margin-right: 20px;
+      }
+      @include media(600) {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+    }
+    
+  }
+  &__item {
+    padding-bottom: 12px;
+    box-shadow: inset 0px -1px 0px #E0E0E0;
+    @include media(768) {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 5px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 24px;
+      @include media(600) {
+        margin-bottom: 12px;
+      }
+    }
+    p {
+      font-size: 16px;
+      line-height: 21px;
+      margin-bottom: 2px;
+      @include media(414) {
+        font-size: 14px;
+        line-height: normal;
+      }
+    }
+    b {
+      font-size: 17px;
+      line-height: 22px;
+      @include media(414) {
+        font-size: 14px;
+        line-height: normal;
+      }
+    }
+  }
+}

@@ -5,7 +5,8 @@
     padding-bottom: 15px;
   }
   @include media(414) {
-    padding-top: 0;
+    padding: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -13,9 +14,17 @@
   &__inner {
     display: flex;
     flex-wrap: wrap;
+    &.banner--center {
+      align-items: center;
+    }
+    .Button {
+      margin-top: 36px;
+      @include media(414) {
+        margin-top: 24px;
+      }
+    }
     @include media(768) {
-      justify-content: space-between;
-      gap: 40px;
+      flex-direction: column;
     }
     @include media(740) {
       flex-direction: column;
@@ -24,40 +33,24 @@
   }
   &__col {
     width: 50%;
+    @include media(768) {
+      width: 100%;
+    }
     img {
       @include media(768) {
         max-width: none;
-        margin-left: -20%;
       }
       @include media(740) {
         margin-left: 0;
         max-width: 100%;
       }
-      @include media(320) {
-        margin-left: -15%;
-      }
     }
-    &:first-child {
-      @include media(768) {
-        margin-left: -25%;
-      }
-      @include media(740) {
-        width: 100%;
-        margin-left: 0;
-      }
-    }
+  
     &:last-child {
       .Button {
         @include media(320) {
           width: 100%;
-          justify-content: center;
         }
-      }
-      @include media(768) {
-        width: 65%;
-      }
-      @include media(740) {
-        width: 100%;
       }
     }
   }
@@ -68,7 +61,9 @@
     color: $blackText;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: 36px;
+    @include media(1000) {
+      font-size: 36px;
+    }
     @include media(768) {
       font-size: 32px;
     }
@@ -77,7 +72,6 @@
     }
     @include media(414) {
       font-size: 24px;
-      margin-bottom: 24px;
     }
   }
 }

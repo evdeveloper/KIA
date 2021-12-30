@@ -24,7 +24,6 @@
     .Button {
       @include media(414) {
         width: 100%;
-        justify-content: center;
       }
     }
   }
