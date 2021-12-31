@@ -1,0 +1,108 @@
+.swiper {
+  &-wrapper {
+    height: 480px;
+    @include media(768) {
+      height: 420px;
+    }
+    @include media(414) {
+      height: 650px;
+    }
+  }
+  &-slide {
+    display: flex;
+    align-items: center;
+    color: $white;
+    @include media(414) {
+      align-items: flex-end;
+    }
+    picture {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+    .container {
+      position: relative;
+      padding: 0 60px;
+      @include media(414) {
+        padding: 0;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include media(414) {
+        height: auto;
+      }
+    }
+    &__info {
+      max-width: 580px;
+      padding: 24px;
+      background: rgba(42, 42, 42, 0.9);
+      @include media(768) {
+        max-width: 450px;
+      }
+      p {
+        font-size: 24px;
+        line-height: 150%;
+        @include media(768) {
+          font-size: 20px;
+        }
+        @include media(414) {
+          font-size: 18px;
+        }
+      }
+    }
+    &__title {
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 120%;
+      margin-bottom: 12px;
+      @include media(768) {
+        font-size: 32px;
+      }
+      @include media(414) {
+        font-size: 28px;
+        line-height: 130%;
+      }
+    }
+  }
+  &-pagination {
+    @include media(414) {
+      display: none;
+    }
+    &.swiper-pagination-horizontal {
+      bottom: 24px;
+      &.swiper-pagination-bullets {
+        .swiper-pagination-bullet {
+          @include size(14px);
+          margin: 0 8px;
+          background-color: $grayFour;
+          opacity: 1;
+          &.swiper-pagination-bullet-active {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+  &-button {
+    &-prev,
+    &-next {
+      @include media(768) {
+        display: none;
+      }
+      &:after {
+        color: $white;
+        font-size: 20px;
+      }
+      @include size(36px);
+      background-color: $blackTitle;
+      opacity: 0.8;
+      border-radius: 4px;
+    }
+  }
+}

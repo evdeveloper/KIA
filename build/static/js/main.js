@@ -1,18 +1,15 @@
 $(document).ready(function() {
 
-$('.brands__item:hidden').each(function(i, item) {
-  let items = item[i];
-  console.log($(item).index());
-});
 
+$('.brands__item:hidden').attr('data-hide', true);
 
 $(document).on('click','.brands__show', function(){
-  let itemHide = $(this).parent().toggleClass('active').siblings('.brands__item:nth-child(n+10)');
-  
-  if ($(this).parent().hasClass('active')) {
-    $(itemHide).show();
+  $(this).toggleClass('active');
+  let dataItem = $(this).siblings('.brands__item[data-hide="true"]');
+  if (!$(this).hasClass('active')) {
+    dataItem.css({'display':'none'});
   }else {
-    $(itemHide).hide();
+    dataItem.css({'display':'flex'});
   }
   return false;
 });
@@ -43,8 +40,6 @@ optionTable();
 function counterModel() {
   let timeoutId;
   $(document).on('click', '.engine__check input', function(e){
-    let model = $(this).parent().next().find('span').text();
-    console.log();
     let count = $('.engine__check input:checked').length;
     if (count > 3) return false;
     let popupCounter = $('.modelCounter');
@@ -77,17 +72,16 @@ function saleCounter() {
   });
 }
   
-  function prettify(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  }
-  
-  saleCounter();
+function prettify(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+saleCounter();
   
   
 function options() {
   $(document).on('click', '.feature__table tr', function() {
     let cParent = $(this).attr('class');
-    let tab = $('[data-tr="tab"]');
     $(this).siblings('[data-tr="'+cParent+'"]').toggle(); 
     return false;
   });
@@ -331,11 +325,12 @@ $('.gallery-all').on('click', function(){
 
 function itemAllShow(items) {
   $(document).on('click','.btnShow', function(){
-    $(this).hide().closest('body').find($(items));
+    $(this).hide().closest('body').find(items).fadeIn();
   });
 }
 
 itemAllShow($('.new-cars__col'));
+itemAllShow($('.trusted__item'));
 
 
 function filterTabs() {
@@ -377,3 +372,22 @@ function init() {
 ymaps.ready(init);
     
 });
+
+const swiper = document.querySelector('.swiper');
+if (swiper) {
+  new Swiper(swiper, {
+    speed: 400,
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    mousewheel: true,
+    keyboard: true,
+  });
+}
+

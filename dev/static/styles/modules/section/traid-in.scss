@@ -1,0 +1,14 @@
+.s-traid-in {
+  padding: 74px 0;
+  background: url('../images/img/traid-in.png') no-repeat;
+  @include media(768) {
+    padding: 42px 0;
+    background: url('../images/img/traid-in-tablet.png') no-repeat;
+    background-position: top right;
+  }
+  @include media(414) {
+    padding: 36px 0;
+    background: url('../images/img/traid-in-phone.png') no-repeat;
+    background-position: top right;
+  }
+}

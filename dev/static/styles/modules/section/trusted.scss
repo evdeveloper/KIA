@@ -5,6 +5,11 @@
   @include media(414) {
     margin-bottom: 16px;
   }
+  & + .btnShow {
+    @include media(1000) {
+      display: flex;
+    }
+  }
   &__author {
     display: inline-flex;
     flex-wrap: wrap;
@@ -70,6 +75,9 @@
     @include media(1000) {
       width: 100%;
       max-width: 100%;
+      &:not(:nth-child(-n+3)) {
+        display: none;
+      }
     }
     @include media(500) {
       height: auto;
