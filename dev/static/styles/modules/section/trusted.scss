@@ -10,6 +10,33 @@
       display: flex;
     }
   }
+  &__reviews {
+    padding: 40px 20px 20px;
+    background-color: #525151;
+    .fancybox-button svg path {
+      fill: $white;
+    }
+  }
+  &__img {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      width: calc(50% - 5px);
+      max-width: calc(50% - 5px);
+      max-height: 400px;
+      &:not(:last-child) {
+        margin-right: 10px;
+        @include media(414) {
+          margin-right: 0;
+          margin-bottom: 10px
+        }
+      }
+      @include media(414) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
   &__author {
     display: inline-flex;
     flex-wrap: wrap;
@@ -38,6 +65,7 @@
     font-size: 13px;
     line-height: 21px;
     color: $grayFive;
+    outline: none;
     letter-spacing: 0.03em;
     span {
       border-bottom: 1px solid;

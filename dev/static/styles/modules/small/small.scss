@@ -526,8 +526,8 @@
       margin-bottom: 8px;
     }
     @include media(414) {
-      width: calc(50% - 4px);
-      max-width: calc(50% - 4px);
+      width: calc(50% - 8px);
+      max-width: calc(50% - 8px);
     }
     &:not(:last-child) {
       margin-right: 8px;

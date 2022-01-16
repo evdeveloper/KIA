@@ -93,6 +93,19 @@ section {
   &.section-32 {
     padding: 32px 0;
   }
+  &.section-36 {
+    padding: 36px 0;
+    @include media(414) {
+      padding: 32px 0;
+    }
+  }
+}
+
+.section-36 {
+  padding: 36px 0;
+  @include media(414) {
+    padding: 32px 0;
+  }
 }
 
 input,

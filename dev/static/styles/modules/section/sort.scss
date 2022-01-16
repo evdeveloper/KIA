@@ -23,6 +23,9 @@
       @include media(1000) {
         margin-bottom: 24px;
       }
+      @include media(414) {
+        margin-bottom: 12px;
+      }
     }
     @include media(1000) {
       flex-direction: column;

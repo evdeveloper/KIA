@@ -3,11 +3,18 @@ section.s-kia.section-50
     .section__top
       h2.section-title.title-black.mb-36
         | KIA
-        a(href="#").catalog-link
-          | в каталог
-          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.58594 16.5099L12.5957 10.4154L6.75284 4.4901L8.17692 3.08583L15.4045 10.4154L8.01002 17.9142L6.58594 16.5099Z"/>
-          </svg>
+        if (sale)
+          a(href="#").catalog-link
+            | Все модели
+            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.58594 16.5099L12.5957 10.4154L6.75284 4.4901L8.17692 3.08583L15.4045 10.4154L8.01002 17.9142L6.58594 16.5099Z"/>
+            </svg>
+        else
+          a(href="#").catalog-link 
+            | в каталог
+            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.58594 16.5099L12.5957 10.4154L6.75284 4.4901L8.17692 3.08583L15.4045 10.4154L8.01002 17.9142L6.58594 16.5099Z"/>
+            </svg>
 
       .cards
         a(href="#").cards__item

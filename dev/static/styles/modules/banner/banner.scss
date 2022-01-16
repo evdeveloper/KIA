@@ -1,6 +1,7 @@
 .s-banner {
   padding: 25px 0 45px;
   margin-bottom: 40px;
+  background-color: $whiteTwo;
   @include media(768) {
     padding-bottom: 15px;
   }

@@ -1,0 +1,17 @@
+extends template/main
+
+block variables
+  - var title = 'Распродажа автомобилей'
+  - var pageClass = ''
+  - var sale = true
+
+
+
+block content
+  include modules/section/banner
+  include modules/section/audi
+  include modules/section/kia
+  include modules/section/saving-time
+  include modules/section/news
+  include modules/section/contacts
+

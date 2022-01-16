@@ -1,0 +1,13 @@
+extends template/main
+
+block variables
+  - var title = 'Каталог новостей'
+  - var pageClass = ''
+
+
+
+block content
+  include modules/section/trusted-list
+
+block script
+  script(src="static/js/fancybox.min.js")

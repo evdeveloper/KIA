@@ -3,21 +3,34 @@
     .news
       .news__item
         .news__top
-          img(src="static/images/img/news/1.jpg" alt="Автострахование")
+          if (sale)
+            img(src="static/images/img/news/5.jpg" alt="Автострахование")
+          else
+            img(src="static/images/img/news/1.jpg" alt="Автострахование")
         .news__body
-          .news__title Автострахование
-          p Наличие страхового полиса – это залог Вашего спокойствия в случае ДТП. Мы сотрудничаем с крупными страховыми компаниями, репутация которых не вызывает сомнений!
+          if (sale)
+            .news__title КРЕДИТНАЯ ПРОГРАММА "KIA FINANCE". НЕБЫВАЛЫЕ ВЫГОДЫ НА АВТОМОБИЛИ KIA
+            p Автосалон "Кремлевский" совместно с банками-партнерами рад сообщить Вам о старте специальной кредитной программы "KIA FINANCE 2018". Кредитная ставка от 4.5% годовых, без первого взноса, по 2-м документам.
+          else
+            .news__title Автострахование
+            p Наличие страхового полиса – это залог Вашего спокойствия в случае ДТП. Мы сотрудничаем с крупными страховыми компаниями, репутация которых не вызывает сомнений!
           button(type="button" class="Button" data-popup-target="#popupRequest") Отправить заявку
       .news__item
         .news__top
-          img(src="static/images/img/news/2.jpg" alt="Регистрация в гибдд")
+          if (sale)
+            img(src="static/images/img/news/6.jpg" alt="Автострахование")
+          else
+            img(src="static/images/img/news/2.jpg" alt="Регистрация в гибдд")
         .news__body
           .news__title Регистрация в гибдд
           p Регистрация в ГИБДД является обязательным действием при покупке автомобиля. Автохолдинг «Атлант Авто» поможет перерегистрировать Ваш автомобиль без нервов и потери времени.
           button(type="button" class="Button" data-popup-target="#popupRequest") Отправить заявку
       .news__item
         .news__top
-          img(src="static/images/img/news/3.jpg" alt="Утилизация")
+          if (sale)
+            img(src="static/images/img/news/7.jpg" alt="Автострахование")
+          else
+            img(src="static/images/img/news/3.jpg" alt="Утилизация")
         .news__body
           .news__title Утилизация
           p Воспользуйтесь программой «Утилизация» в Автохолдинге «Атлант Авто» и получите сертификат-скидку на покупку нового автомобиля на сумму до 40 000 рублей.
