@@ -1,0 +1,61 @@
+form {
+  input {
+    width: 100%;
+    padding: 24px;
+    height: 72px;
+    border: 1px solid #E5E5E5;
+    font-size: 18px;
+    transition: all .3s;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    @include media(414) {
+      margin-bottom: 8px;
+    }
+    &::placeholder {
+      color: $gray;
+      font-size: 18px;
+      transition: all .3s;
+    }
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    &.form-error {
+      border-color: $red;
+      color: $red;
+      background: rgba(255, 61, 95, 0.2);
+      &::placeholder { color: $red; }
+    }
+    @include media(768) {
+      padding: 17.5px 24px;
+      height: 56px;
+    }
+    @include media(600) {
+      padding: 16px;
+      height: 48px;
+    }
+  }
+  textarea {
+    @extend input;
+    height: 120px;
+    font-family: $FBase;
+    margin-bottom: 36px;
+    @include media(768) {
+      height: 100px;
+    }
+    @include media(414) {
+      margin-bottom: 24px;
+    }
+  }
+  .Button {
+    @include media(414) {
+      width: 100%;
+    }
+  }
+  .agree {
+    @include media(414) {
+      text-align: center;
+    }
+  }
+}

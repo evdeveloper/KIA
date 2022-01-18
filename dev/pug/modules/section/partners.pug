@@ -1,0 +1,10 @@
+section.s-partners.section-50
+  .container
+    h2.section-title.title-black.mb-32 Банки партнеры
+    .partners
+      - let url = 'static/images/img/bank/';
+      - let alt = 'bank';
+      each val, key in Array(18)
+        - let count = key+1
+        a(href="#").partners__item
+          img(src=url + count + '.png', alt=alt)

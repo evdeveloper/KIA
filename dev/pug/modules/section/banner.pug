@@ -1,4 +1,4 @@
-section.s-banner 
+section.s-banner
   .container
     if (catalog)
       .banner__inner.banner--center
@@ -12,6 +12,24 @@ section.s-banner
           img(src="static/images/img/duo-auto.png" alt="распродажа автомобилей")
         .banner__col
           h1.banner__title распродажа автомобилей В САНКТ-ПЕТЕРБУРГE
+    else if (credit)
+      .banner__inner.banner--center
+        .banner__col
+          img(src="static/images/img/credit.png" alt="Покупка авто в Кредит В САНКТ-ПЕТЕРБУРГE")
+        .banner__col
+          h1.banner__title Покупка авто в Кредит В САНКТ-ПЕТЕРБУРГE
+    else if (tradeIn)
+      .banner__inner.banner--center
+        .banner__col
+          img(src="static/images/img/trade.png" alt="Покупка авто в TRADE-IN В САНКТ-ПЕТЕРБУРГE")
+        .banner__col
+          h1.banner__title Покупка авто в TRADE-IN В САНКТ-ПЕТЕРБУРГE
+    else if (buyOut)
+      .banner__inner.banner--center
+        .banner__col
+          img(src="static/images/img/buyout2.png" alt="Срочный Выкуп автомобилей В САНКТ-ПЕТЕРБУРГE")
+        .banner__col
+          h1.banner__title Срочный Выкуп автомобилей В САНКТ-ПЕТЕРБУРГE
     else 
       .banner__inner
         .banner__col

@@ -1,0 +1,51 @@
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__col {
+    width: calc(50% - 20px);
+    @include media(600) {
+      width: 100%;
+    }
+    &:last-child {
+      max-width: 480px;
+      @include media(600) {
+        max-width: 100%;
+        margin-top: 36px;
+      }
+    }
+  }
+  &__item {
+    font-weight: bold;
+    color: $black26;
+    span {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 30px;
+      line-height: 37px;
+      margin-bottom: 12px;
+      @include media(768) {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 8px;
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 145%;
+      @include media(768) {
+        font-size: 16px;
+      }
+    }
+    a {
+      display: block;
+      color: $black26;
+    }
+    &:not(:last-child) {
+      margin-bottom: 36px;
+      @include media(768) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

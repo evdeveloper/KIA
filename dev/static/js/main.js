@@ -319,6 +319,16 @@ $('.choicesCar').each(function(i, item) {
   
 });
 
+$('.choicesNotSearch').each(function(){
+  new Choices(this, {
+    itemSelectText:'',
+    shouldSort: false,
+    searchChoices: false,
+    searchEnabled: false
+  });
+});
+
+
 $('.gallery-all').on('click', function(){
   $(this).hide().siblings().fadeIn();
 });
@@ -371,7 +381,7 @@ function init() {
 
 ymaps.ready(init);
     
-});
+
 
 const swiper = document.querySelector('.swiper');
 if (swiper) {
@@ -391,3 +401,45 @@ if (swiper) {
   });
 }
 
+const creditCount = document.getElementById('sliderMonth');
+if (creditCount) {
+  noUiSlider.create(creditCount, {
+    start: 6,
+    connect: 'lower',
+    range: {
+      'min': 0,
+      'max': 12
+    }
+  });
+  const rangeMonthInput = document.getElementById('sliderMonthValue');
+  creditCount.noUiSlider.on('update', function (values, handle) {
+    rangeMonthInput.value = Math.trunc(+values[handle]) + ' ' + 'мес';
+  });
+}
+
+
+
+
+
+const payCount = document.getElementById('sliderPay');
+if (payCount) {
+  noUiSlider.create(payCount, {
+    start: 95000,
+    connect: 'lower',
+    range: {
+      'min': 0,
+      'max': 1000000
+    }
+  });
+  const rangePayInput = document.getElementById('sliderPayValue');
+  payCount.noUiSlider.on('update', function (values, handle) {
+    rangePayInput.value = Math.trunc(+values[handle]) + ' ' + '₽';
+    
+  });
+}
+
+
+
+
+
+});

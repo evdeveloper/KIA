@@ -320,6 +320,7 @@
     background-color: #c7e4f8;
     border: 1px solid $white;
     border-radius: 4px;
+    z-index: 100;
     .choices__item {
       padding: 17px 25px;
       font-size: 18px;
@@ -329,6 +330,11 @@
     }
     @include media(1100) {
       top: calc(100% + 10px);
+    }
+  }
+  &__item {
+    &.choices__item--disabled {
+      opacity: 0.3;
     }
   }
 }
@@ -361,6 +367,7 @@
   line-height: 150%;
   letter-spacing: 0.2px;
   color: $gray;
+  margin-top: 12px;
   span {
     color: $red;
     border-bottom: 1px solid;
@@ -370,6 +377,9 @@
   }
   &:active {
     span { color: $activeLink; }
+  }
+  &.popupForm__agree {
+    margin-top: 20px;
   }
 }
 
@@ -381,6 +391,12 @@
   margin-bottom: 24px;
   &.mb-36 { 
     margin-bottom: 36px;
+    @include media(768) {
+      margin-bottom: 24px;
+    }
+  }
+  &.mb-32 { 
+    margin-bottom: 32px;
     @include media(768) {
       margin-bottom: 24px;
     }
@@ -639,5 +655,104 @@
     left: 0;
     top: 0;
     background: linear-gradient(180deg, #B9DDF6 0%, #BBDEF7 48.86%, #B6DAF3 100%);
+  }
+}
+
+.not-found {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 70px 20px 20px;
+  @include media(768) {
+    padding-top: 56px;
+  }
+  @include media(414) {
+    padding: 48px 20px 10px;
+  }
+  img {
+    margin: 0 auto 24px;
+    @include media(768) {
+      max-width: 350px;
+    }
+  }
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+    color: $blackTitle;
+    margin-bottom: 32px;
+    @include media(414) {
+      font-size: 15px;
+    }
+  }
+}
+
+.blockOffers {
+  position: relative;
+  z-index: 1;
+  padding: 55px 100px;
+  text-align: center;
+  background: linear-gradient(180deg, #B9DDF6 0%, #BBDEF7 48.86%, #B6DAF3 100%);
+  @include media(768) {
+    padding: 40px 64px;
+  }
+  @include media(414) {
+    text-align: left;
+    padding: 40px 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .Button {
+    @include media(414) {
+      width: 100%;
+    }
+  }
+  h2 {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 59px;
+    color: #F2F9FE;
+    margin-bottom: 4px;
+    @include media(768) {
+      font-size: 38px;
+      line-height: 46px;
+    }
+    @include media(414) {
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 8px;
+      color: $blackTitle;
+    }
+  }
+  img {
+    opacity: 0.4;
+  }
+  p {
+    font-size: 18px;
+    line-height: 140%;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: $gray;
+    @include media(414) {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+  .blockSend__img:first-child {
+    @include media(900) {
+      top: 0;
+    }
+  }
+}
+
+.position {
+  &__images {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
   }
 }

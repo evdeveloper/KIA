@@ -18,17 +18,19 @@
     flex-direction: column;
     align-items: flex-start;
     padding-top: 24px;
-    height: 250px;
+    flex: 1;
     p {
       font-size: 18px;
       line-height: 24px;
       color: $blackTitle;
       overflow: hidden;
+      margin-bottom: 36px;
       display: -webkit-box;
       -webkit-line-clamp: 5;
       -webkit-box-orient: vertical; 
       @include media(414) {
         font-size: 15px;
+        margin-bottom: 24px;
       }
     }
     .Button {
@@ -50,6 +52,8 @@
     }
   }
   &__item {
+    display: flex;
+    flex-direction: column;
     width: calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
     margin: 0 20px 54px 0;

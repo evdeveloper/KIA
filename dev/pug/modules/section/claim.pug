@@ -1,0 +1,152 @@
+section.s-claim.section-50 
+  .claim
+    .container
+      if (tradeIn)
+        h2.section-title.title-black.mb-36 ЗАЯВКа TRADE-IN
+      else if (buyOut)
+        h2.section-title.title-black.mb-36 ЗАЯВКа на выкуп авто
+      else
+        h2.section-title.title-black.mb-36 ЗАЯВКа на кредит
+      form(action="/" class="blockForm")
+        input(type="hidden" name="claimcar" value="Заявка на кредит")
+        .claim-car
+          if (credit)
+            .claim__item
+              .claim__text Ваш будущий автомобиль
+              .claim-car__list
+                .claim-car__col
+                  .blockForm__select 
+                    select(class="choicesCar" data-choices="brand" name="brand")
+                      option(value="" selected disabled) Марка
+                  .blockForm__select 
+                    select(class="choicesCar" data-choices="model" name="model")
+                      option(value="" selected disabled) Модель
+                  .blockForm__select 
+                    select(class="choicesEquip choicesNotSearch" name="equipment")
+                      option(value="" selected disabled) Комплектация
+                      option(value="basic") Базовая
+                      option(value="standard") Стандарт
+                      option(value="comfort") Комфорт
+                      option(value="lux") Люкс
+                      option(value="auction") Аукционная
+                .claim-car__col
+                  .claim-car__block
+                    .claim-car__img
+                      picture
+                        source(srcset="static/images/img/auto-phone.png" media="(max-width: 600px)")
+                        img(src="static/images/img/auto.png" alt="Ваш будущий автомобиль")
+                      
+                    .claim-car__option
+                      .claim-car__name KIA RIO
+                      .claim-car__model Classic Audio
+                      .claim-car__inner
+                        .claim-car__items
+                          .claim-car__item
+                            img(src="static/images/img/claim/1.svg" alt="Мощность")
+                            span 100 л.с.
+                          .claim-car__item
+                            img(src="static/images/img/claim/3.svg" alt="Разгон")
+                            span 12,2 сек.
+                        .claim-car__items
+                          .claim-car__item
+                            img(src="static/images/img/claim/2.svg" alt="Расход")
+                            span 4,8 л. / 100 км
+                          .claim-car__item
+                            img(src="static/images/img/claim/4.svg" alt="Максимальная скорость")
+                            span 185 км/ч
+                      .claim-car__prices
+                        .claim-car__price 382 000 ₽
+                        .claim-car__price-old 388 000 ₽
+          
+            .claim__item
+              .claim__text Кредитные условия
+              .creditTerms
+                .sliderBlock
+                  .sliderBlock__col
+                    .sliderBlock__text Срок кредита, месяцев
+                    .sliderRange#sliderMonth
+                  input(type="text" name="rangemonth" style="width: 60px" readonly value="0" id="sliderMonthValue")
+                .blockForm__select 
+                  select(class="choicesCredit choicesNotSearch" name="creditterm")
+                    option(value="" selected disabled) Срок кредита, мес.
+                    option(value="0") 0
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+                    option(value="6") 6
+                    option(value="7") 7
+                    option(value="8") 8
+                    option(value="9") 9
+                    option(value="10") 10
+                    option(value="11") 11
+                    option(value="12") 12
+                    
+                .sliderBlock
+                  .sliderBlock__col
+                    .sliderBlock__text Первоначальный взнос, ₽
+                    .sliderRange#sliderPay
+                  input(type="text" name="rangepay" style="width: 85px" readonly value="0" id="sliderPayValue")
+                .blockForm__select 
+                  select(class="choicesOnePay choicesNotSearch" name="onepay")
+                    option(value="" selected disabled) Первый взнос, ₽  
+                    option(value="50000") 50 000
+                    option(value="100000") 100 000
+                    option(value="200000") 200 000
+                    option(value="300000") 300 000
+                    option(value="500000") 500 000
+                    option(value="800000") 800 000
+                    option(value="1000000") 1000 000
+                .blockForm__select 
+                  select(class="choicesPresent choicesNotSearch" name="present")
+                    option(value="" selected disabled) Выберите подарок
+                    option(value="rugs") Коврики
+                    option(value="crankcase") Защита картера
+                    option(value="tires") Зимняя резина
+          if (tradeIn)
+            .claim__item.claim--data
+              .claim__text Ваш текущий автомобиль
+              .blockForm__inputs
+                .blockForm__input
+                  input(type="text" name="brand" required aria-label="brand" placeholder="Марка")
+                .blockForm__input
+                  input(type="text" name="model" aria-label="model" placeholder="Модель")
+                .blockForm__input
+                  input(type="number" name="price" aria-label="price" placeholder="Ваша стоимость, ₽")
+          if (buyOut)
+            .claim__item.claim--data
+              .claim__text Ваш текущий автомобиль
+              .blockForm__inputs
+                .blockForm__input
+                  input(type="text" name="brand" required aria-label="brand" placeholder="Марка")
+                .blockForm__input
+                  input(type="text" name="model" aria-label="model" placeholder="Модель")
+                .blockForm__input
+                  input(type="number" name="price" aria-label="price" placeholder="Ваша стоимость, ₽")
+
+          .claim__item
+            .claim__text Ваши данные (гарантируем 100% конфиденциальность!)
+            .blockForm__inputs
+              .blockForm__input
+                input(type="text" name="name" required aria-label="name" placeholder="ФИО")
+              .blockForm__input
+                input(type="tel" name="phone" required aria-label="phone" placeholder="Ваш телефон")
+              button(type="submit" class="Button Button--big Button--z18")
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.3225 0.698379C22.7222 0.0823177 21.8338 -0.147195 21.0055 0.0943974L1.6896 5.71143C0.815638 5.95423 0.196185 6.65123 0.0293162 7.53666C-0.141154 8.4378 0.45429 9.58175 1.23221 10.0601L7.27188 13.7722C7.89134 14.1527 8.69086 14.0573 9.20347 13.5402L16.1195 6.58116C16.4676 6.21877 17.0439 6.21877 17.392 6.58116C17.7402 6.93147 17.7402 7.49922 17.392 7.8616L10.464 14.8219C9.95018 15.3377 9.85414 16.141 10.2323 16.7643L13.9226 22.8645C14.3548 23.5893 15.0991 24 15.9154 24C16.0115 24 16.1195 24 16.2155 23.9879C17.1519 23.8671 17.8962 23.2269 18.1723 22.3209L23.8987 3.02975C24.1508 2.20833 23.9227 1.31444 23.3225 0.698379Z" fill="white"/>
+                </svg>
+                | Отправить заявку
+            .blockForm__info
+              | Нажимая на кнопку "Отправить заявку" вы даете согласие на обработку 
+              a(href="#") 
+                span персональных данных
+    .position__images
+      .position__img
+        picture
+          source(srcset="static/images/img/claim-credit-phone.png" media="(max-width: 414px)")
+          source(srcset="static/images/img/claim-credit-tablet.png" media="(max-width: 768px)")
+          if (tradeIn)
+            img(src="static/images/img/car-parking.png" alt="ЗАЯВКа TRADE-IN")
+          else
+            img(src="static/images/img/claim-credit.png" alt="ЗАЯВКА НА КРЕДИТ")

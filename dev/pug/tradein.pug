@@ -1,0 +1,19 @@
+extends template/main
+
+block variables
+  - var title = 'tradeIn'
+  - var pageClass = ''
+  - var tradeIn = true
+
+
+
+block content
+  include modules/section/banner
+  include modules/section/claim
+  include modules/section/argument
+  include modules/section/blockOffers
+  include modules/section/contacts
+
+
+block script
+  script(src="static/js/choices.min.js")

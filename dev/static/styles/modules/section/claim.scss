@@ -1,0 +1,383 @@
+.claim {
+  position: relative;
+  z-index: 1;
+  padding: 65px 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #B9DDF6 0%, #BBDEF7 48.86%, #B6DAF3 100%);
+  &__text {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 12px;
+    color: $gray;
+    @include media(1000) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @include media(600) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  
+  .blockForm__select {
+    margin-right: 0;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+      @include media(1100) {
+        margin-bottom: 8px;
+      }
+    }
+    &:last-child {
+      @include media(1100) {
+        margin-right: 0;
+      }
+    }
+    @include media(1100) {
+      width: calc(33.333% - 5.333px);
+      flex: 0 0 calc(33.333% - 5.333px);
+      margin-right: 8px;
+    }
+    @include media(700) {
+      width: 100%;
+      flex: 100%;
+      margin-right: 0px;
+    }
+  }
+ 
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+      @include media(1100) {
+        margin-bottom: 24px;
+      }
+    }
+    .blockForm__input {
+      width: 35%;
+      flex: 0 0 35%;
+      @include media(1100) {
+        width: calc(50% - 4px);
+        flex: 0 0 calc(50% - 4px);
+      }
+      @include media(1000) {
+        height: 56px;
+      }
+      @include media(600) {
+        width: 100%;
+        flex: 0 0 100%;
+      }
+      &:first-child {
+        @include media(1100) {
+          margin-right: 8px;
+        }
+        @include media(600) {
+          margin-right: 0;
+        }
+      }
+    }
+    .blockForm__info {
+      text-align: right;
+      margin-top: 24px;
+      @include media(1100) {
+        text-align: center;
+      }
+    }
+    .Button {
+      flex: 1;
+      @include media(1100) {
+        flex: none;
+        height: 72px;
+        margin-top: 24px;
+      }
+      @include media(1000) {
+        height: 56px;
+      }
+    }
+    .blockForm__inputs {
+      @include media(1100) {
+        margin-bottom: 0;
+        justify-content: center;
+      }
+    }
+    &.claim--data {
+      .blockForm__input {
+        width: calc(33.333% - 10.666px);
+        flex: 0 0 calc(33.333% - 10.666px);
+        @include media(1100) {
+          width: calc(33.333% - 5.333px);
+          flex: 0 0 calc(33.333% - 5.333px);
+          margin-bottom: 0;
+        }
+        @include media(600) {
+          width: 100%;
+          flex: 0 0 100%;
+          margin-bottom: 8px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        &:nth-child(2) {
+          @include media(1100) {
+            margin-right: 8px;
+          }
+          @include media(600) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.claim-car {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__img {
+    width: 280px;
+    height: 100%;
+    @include media(600) {
+      align-self: center;
+    }
+    img { 
+      width: 100%;
+      height: 100%; 
+    }
+  }
+  &__option {
+    flex: 1;
+    padding: 32px 20px;
+  }
+  &__block {
+    display: flex;
+    background: #D6EBFA;
+    border: 1px solid $white;
+    border-radius: 4px;
+    height: 245px;
+    @include media(600) {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  &__col {
+    &:first-child {
+      width: calc(40% - 10px);
+      max-width: calc(40% - 10px);
+      @include media(1100) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    &:last-child {
+      width: calc(60% - 10px);
+      max-width: calc(60% - 10px);
+    }
+    &:first-child,
+    &:last-child {
+      @include media(1100) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    
+    &:not(:last-child) {
+      margin-right: 20px;
+      @include media(1100) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__name {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: $red;
+    margin-bottom: 4px;
+  }
+  &__model {
+    font-size: 14px;
+    line-height: 17px;
+    color: $grayTwo;
+    margin-bottom: 24px;
+  }
+  &__prices {
+    display: flex;
+    & > * {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+  }
+  &__price {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: $red;
+    &-old {
+      font-size: 14px;
+      line-height: 17px;
+      text-decoration: line-through;
+      color: $gray;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    @include media(1100) {
+      margin-bottom: 16px;
+    }
+    @include media(414) {
+      justify-content: space-between;
+    }
+  }
+  &__items {
+    &:not(:last-child) {
+      margin-right: 8px;
+      @include media(414) {
+        width: calc(50% - 16px);
+        margin-right: 0;
+      }
+    }
+    &:last-child {
+      @include media(414) {
+        width: calc(50% - 8px);
+      }
+    }
+    @include media(1100) {
+      display: flex;
+    }
+    @include media(414) {
+      justify-content: space-between;
+      text-align: center;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+    color: $gray;
+    margin-bottom: 12px;
+    @include media(1100) {
+      margin-bottom: 8px;
+    }
+    @include media(414) {
+      flex-direction: column;
+    }
+    &:not(:last-child) {
+      @include media(1100) {
+        margin-right: 8px;
+      }
+    }
+    img {
+      margin-right: 12px;
+      @include media(1100) {
+        margin-right: 8px;
+      }
+      @include media(414) {
+        margin-right: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+  
+}
+
+.sliderBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: #D6EBFA;
+  border: 1px solid $white;
+  border-radius: 4px;
+  height: 72px;
+  flex: 1;
+  & + .blockForm__select {
+    display: none;
+  }
+  @include media(1100) {
+    display: none;
+    & + .blockForm__select {
+      display: block;
+    } 
+  }
+  &__text {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: $gray;
+    margin-bottom: 6px;
+  }
+  input {
+    font-size: 18px;
+    color: $gray;
+    padding: 0;
+    text-align: right;
+    height: auto;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.creditTerms {
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+  .blockForm__select {
+    margin-right: 0;
+    @include media(1100) {
+      margin-right: 8px;
+    }
+    @include media(700) {
+      margin-right: 0;
+    }
+  }
+}
+
+.sliderRange {
+  max-width: 180px;
+  height: 5px;
+  box-shadow: none;
+  border: none;
+  background: #EDEFF2;
+  border-radius: 5px;
+}
+
+.noUi-handle:after, .noUi-handle:before {
+  display: none;
+}
+
+.noUi-horizontal .noUi-handle {
+  @include size(11px);
+  top: -3px;
+  right: -11px;
+}
+
+.noUi-base {
+  width: calc(100% - 11px);
+}
+
+.noUi-connect {
+  background-color: $red;
+}
+
+.noUi-connects {
+  border-radius: 5px;
+  width: calc(100% + 11px);
+}
+
+
+.noUi-handle {
+  border-radius: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: $red;
+  cursor: pointer;
+}

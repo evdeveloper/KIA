@@ -7,13 +7,13 @@ let uglify = require('gulp-uglify'),
 
 module.exports = function () {
     $.gulp.task('libsJS:dev', () => {
-        return $.gulp.src(['node_modules/inputmask/dist/jquery.inputmask.min.js'])
+        return $.gulp.src(['node_modules/inputmask/dist/jquery.inputmask.min.js', 'node_modules/nouislider/dist/nouislider.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.ouput));
     });
 
     $.gulp.task('libsJS:build', () => {
-        return $.gulp.src(['node_modules/inputmask/dist/jquery.inputmask.min.js'])
+        return $.gulp.src(['node_modules/inputmask/dist/jquery.inputmask.min.js', 'node_modules/nouislider/dist/nouislider.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.ouput));

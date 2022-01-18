@@ -7,7 +7,8 @@
   }
   @include media(414) {
     padding: 0;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
   }
 }
 
@@ -36,6 +37,12 @@
     width: 50%;
     @include media(768) {
       width: 100%;
+    }
+    &:not(:last-child) {
+      @include media(414) {
+        padding-top: 20px;
+        margin-bottom: 30px;
+      }
     }
     img {
       @include media(768) {

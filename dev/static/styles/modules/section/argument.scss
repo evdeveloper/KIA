@@ -1,0 +1,62 @@
+.argument {
+  display: flex;
+  flex-wrap: wrap;
+  &__col {
+    width: calc(50% - 60px);
+    max-width: calc(50% - 60px);
+    @include media(768) {
+      width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+    @include media(650) {
+      width: 100%;
+      max-width: 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 120px;
+      @include media(768) {
+        margin-right: 20px;
+      }
+      @include media(650) {
+        margin-right: 0;
+        margin-bottom: 36px;
+      }
+    }
+    li {
+      position: relative;
+      padding-left: 36px;
+      color: $grayTwo;
+      line-height: 22px;
+      @include media(768) {
+        font-size: 15px;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include media(768) {
+          max-width: 20px;
+          top: 3px;
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 29px;
+    margin-bottom: 36px;
+    color: $black26;
+    @include media(768) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @include media(650) {
+      margin-bottom: 24px;
+    }
+  }
+}
